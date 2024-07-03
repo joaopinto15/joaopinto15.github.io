@@ -1,97 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="icon" href="src/images/logo.ico">
-    <link rel="stylesheet" href="src/styles.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/420ae0646b.js" crossorigin="anonymous"></script>
-    <title>João Pinto's Portfolio</title>
-    <meta charset="UTF-8" />
-  </head>
-  <body>
-      <section class="hero">
-          <nav>
-              <img class="logo" src="src/images/logo.png" alt="Ania Kubow's logo"/>
-              <ul id="nav-list">
-                  <li><a class="hover-underline-animation" href="#about-me">About me</a></li>
-                  <li><a class="hover-underline-animation" href="#projects">Projects</a></li>
-                  <li><a class="hover-underline-animation" href="#contact-me">Contact</a></li>
-              </ul>
-              <button class="hamburger" id="hamburger">
-                  <i class="fas fa-bars"></i>
-              </button>
-          </nav>
-          <div class="hero-area">
-            <div class="hero-text">
-                <h1>João Pinto</h1>
-                <p>Software Engineer</p>
-                <div class="button"><a href="#about-me">About me</a></div>
-            </div>
-            <div class="socials">
-                <div><a target='_blank' href="https://twitter.com/joao_15_pinto" class="social">
-                    <i class="devicon-twitter-original"></i>
-                </a></div>
-                <div><a target='_blank' href="https://github.com/joaopinto15"  class="social">
-                    <i class="devicon-github-original"></i>
-                </a></div>
-                <div><a target='_blank' href="https://www.linkedin.com/in/jo%C3%A3o-pinto-92891b250/"  class="social">
-                    <i class="devicon-linkedin-plain"></i>
-                </a></div>
-            </div>
-          </div>
-      </section>
-      <section class="sub-section" id="about-me">
-          <div class="information">
-              <h2>About Me</h2>
-              <p>Hello, My name is João Pinto. I'm currently studying Computer Science at  <a target='_blank' href="https://www.isep.ipp.pt/">ISEP</a>. </p>
-          </div>
-          <div class="headshot-container">
-              <img class="headshot" src="src/images/headshot.jpg" alt="Ania kubow headshot"/>
-          </div>
-      </section>
-      <section class="sub-section-alternative" id="projects">
-          <h2>Projects</h2>
-          <div class="project-container">
-              <div class="project-card">
-                  <img class="project-image" src="src/images/project1.jpg" alt="Project One Image"/>
-                  <h3>Project One</h3>
-                  <p class="subtext">This is my project and some text about it. I enjoyed making this project.</p>
-                  <hr/>
-                  <p class="subtext"><a class="project-link" href="https://github.com/joaopinto15">View here</a></p>
-              </div>
-              <div class="project-card">
-                <img class="project-image" src="src/images/project1.jpg" alt="Project One Image"/>
-                <h3>Project Two</h3>
-                <p class="subtext">This is my project and some text about it. I enjoyed making this project.</p>
-                <hr/>
-                <p class="subtext"><a class="project-link" href="https://github.com/joaopinto15">View here</a></p>
-              </div>
-              <div class="project-card">
-                <img class="project-image" src="src/images/project1.jpg" alt="Project One Image"/>
-                <h3>Project Three</h3>
-                <p class="subtext">This is my project and some text about it. I enjoyed making this project.</p>
-                <hr/>
-                <p class="subtext"><a class="project-link" href="https://github.com/joaopinto15">View here</a></p>
-              </div>
-              <div class="project-card">
-                <img class="project-image" src="src/images/project4.png" alt="Project One Image"/>
-                <h3>Project Four</h3>
-                <p class="subtext">This is my Todo Fullstack app. That is being hosted in a linux server using a raspberry</p>
-                <hr/>
-                <p class="subtext"><a class="project-link" href="https://github.com/joaopinto15/todo_fullstackapp" target="_blank">Source code</a></p>
-                <p class="subtext"><a class="project-link" href="https://github.com/joaopinto15/todo_fullstackapp" target="_blank">Live website(Offline)</a></p>
-              </div>
-          </div>
-      </section>
-      <footer id="contact-me">
-          <a href="mailto:pintojad03@gmail.com" target="_blank">
-            <img src="src/images/gmail.png" alt="gmail" height="50px">
-            <h5>Feel free to contact me if you have any doubt</h6>
-            </a>
-      </footer>
-    <script src="src/app.js"></script>
-  </body>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>João Pinto's Site</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
