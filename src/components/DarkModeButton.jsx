@@ -1,10 +1,10 @@
 import "@theme-toggles/react/css/Around.css"
-import { Around, Within, Simple } from "@theme-toggles/react"
+import { Around } from "@theme-toggles/react"
 
-// Classic , Lightbulb, Around, Within, Simple
+// Custom Button from theme-toggles
 const DarkModeButton = ({ toggleDarkMode }) => {
     return (
-        <Around className='text-4xl' onToggle={toggleDarkMode} duration={650} />
+        <Around className='text-4xl text-black dark:text-white' onToggle={toggleDarkMode} duration={650} />
     )
 
 }

@@ -7,6 +7,7 @@ const App = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
+  const getDarkMode = () => darkMode;
 
   useEffect(() => {
     if (darkMode) {
@@ -26,8 +27,8 @@ const App = () => {
             element={
               <>
                 <Routes>
-                  <Route path='/about' element={<About />} />
-                  <Route path='/projects' element={<Projects />} />
+                  <Route path='/about' element={<About getDarkMode={getDarkMode} />} />
+                  <Route path='/projects' element={<Projects getDarkMode={getDarkMode} />} />
                   <Route path='/contact' element={<Contact />} />
                 </Routes>
                 <Footer />

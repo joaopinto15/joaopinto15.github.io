@@ -1,20 +1,23 @@
 import { Link } from "react-router-dom";
+import { IoMdArrowRoundForward } from "react-icons/io";
 
 import { CTA } from "../components";
 import { projects } from "../constants";
-import { arrow } from "../assets/icons";
 
-const Projects = () => {
+
+const Projects = ({ getDarkMode }) => {
+  const shadow = getDarkMode() ? "btn-dark" : "btn-back";
+
   return (
     <section className='max-container'>
-      <h1 className='head-text'>
+      <h1 className='head-text text-black dark:text-white'>
         My{" "}
         <span className='blue-gradient_text drop-shadow font-semibold'>
           Projects
         </span>
       </h1>
 
-      <p className='text-slate-500 mt-2 leading-relaxed'>
+      <p className='text-slate-500 dark:text-slate-100 mt-2 leading-relaxed'>
         I've embarked on numerous projects throughout the years, but these are
         the ones I hold closest to my heart. Many of them are open-source, so if
         you come across something that piques your interest, feel free to
@@ -26,7 +29,7 @@ const Projects = () => {
         {projects.map((project) => (
           <div className='lg:w-[400px] w-full' key={project.name}>
             <div className='block-container w-12 h-12'>
-              <div className={`btn-back rounded-xl ${project.theme}`} />
+              <div className={`${shadow} rounded-xl ${project.theme}`} />
               <div className='btn-front rounded-xl flex justify-center items-center'>
                 <img
                   src={project.iconUrl}
@@ -37,31 +40,31 @@ const Projects = () => {
             </div>
 
             <div className='mt-5 flex flex-col'>
-              <h4 className='text-2xl font-poppins font-semibold'>
+              <h4 className='text-2xl font-poppins font-semibold text-black dark:text-white'>
                 {project.name}
               </h4>
-              <p className='mt-2 text-slate-500'>{project.description}</p>
+              <p className='mt-2 text-slate-500 dark:text-slate-100'>{project.description}</p>
               <div className='mt-5 flex items-center gap-2 font-poppins'>
+
                 <Link
                   to={project.link}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='font-semibold text-blue-600'
+                  className='font-semibold text-blue-600 dark:text-blue-500'
                 >
-                  Live Link
+                  Source
                 </Link>
-                <img
-                  src={arrow}
-                  alt='arrow'
-                  className='w-4 h-4 object-contain'
-                />
+                <IoMdArrowRoundForward className='text-blue-600 dark:text-blue-500 size-5' />
+
               </div>
+
+
             </div>
           </div>
         ))}
       </div>
 
-      <hr className='border-slate-200' />
+      <hr className='border-slate-200 dark:border-slate-700' />
 
       <CTA />
     </section>

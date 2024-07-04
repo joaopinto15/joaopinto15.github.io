@@ -1,14 +1,14 @@
 import {
-    car,
-    contact,
     estate,
-    github,
-    linkedin,
     pricewise,
     snapgram,
     summiz,
     threads,
 } from "../assets/icons";
+
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { IoMdContact } from "react-icons/io";
+
 
 export const skills = [
     {
@@ -76,18 +76,21 @@ export const experiences = [
 export const socialLinks = [
     {
         name: 'Contact',
-        iconUrl: contact,
+        icon: IoMdContact,
         link: '/contact',
+        color: 'text-black dark:text-white',
     },
     {
         name: 'GitHub',
-        iconUrl: github,
+        icon: FaGithubSquare,
         link: 'https://github.com/joaopinto15',
+        color: 'text-black dark:text-white',
     },
     {
         name: 'LinkedIn',
-        iconUrl: linkedin,
+        icon: FaLinkedin,
         link: 'https://www.linkedin.com/in/jo%C3%A3o-pinto-92891b250/',
+        color: 'text-blue-500',
     }
 ];
 
