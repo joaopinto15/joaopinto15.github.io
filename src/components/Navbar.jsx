@@ -9,10 +9,10 @@ const Navbar = ({ toggleDarkMode }) => {
         <FaHome className='text-4xl text-black dark:text-white' />
       </NavLink>
       <nav className='flex text-lg gap-7 font-medium'>
-        <NavLink to='/about' className={({ isActive }) => isActive ? "text-blue-600 dark:text-blue-500" : "text-black dark:text-white"}>
+        <NavLink to='/about' className={({ isActive }) => isActive ? "text-blue-600 dark:text-blue-500 no-select" : "text-black dark:text-white no-select"}>
           About
         </NavLink>
-        <NavLink to='/projects' className={({ isActive }) => isActive ? "text-blue-600 dark:text-blue-500" : "text-black dark:text-white"}>
+        <NavLink to='/projects' className={({ isActive }) => isActive ? "text-blue-600 dark:text-blue-500 no-select" : "text-black dark:text-white no-select"}>
           Projects
         </NavLink>
       </nav>
