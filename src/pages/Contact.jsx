@@ -1,10 +1,13 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import { Suspense, useRef, useState } from "react";
 
-import { Fox } from "../models";
+import { Character } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
+
+
 
 const Contact = () => {
   const formRef = useRef();
@@ -74,19 +77,19 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
 
       <div className='flex-1 min-w-[50%] flex flex-col'>
-        <h1 className='head-text text-black dark:text-white'>Get in Touch</h1>
+        <h1 className='head-text no-select text-black dark:text-white'>Get in Touch</h1>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='w-full flex flex-col gap-7 mt-14'
+          className='w-full flex flex-col gap-7 mt-14 no-select'
         >
           <label className='text-black-500 dark:text-gray-200 font-semibold'>
             Name
             <input
               type='text'
               name='name'
-              className='input dark:bg-slate-800'
+              className=' input dark:bg-slate-800 dark:text-white'
               placeholder='John'
               required
               value={form.name}
@@ -100,7 +103,7 @@ const Contact = () => {
             <input
               type='email'
               name='email'
-              className='input dark:bg-slate-800'
+              className='input no-select dark:bg-slate-800 dark:text-white'
               placeholder='John@gmail.com'
               required
               value={form.email}
@@ -114,7 +117,7 @@ const Contact = () => {
             <textarea
               name='message'
               rows='4'
-              className='textarea dark:bg-slate-800'
+              className=' textarea  dark:bg-slate-800 dark:text-white'
               placeholder='Write your thoughts here...'
               value={form.message}
               onChange={handleChange}
@@ -138,8 +141,8 @@ const Contact = () => {
       <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
         <Canvas
           camera={{
-            position: [0, 0, 5],
-            fov: 75,
+            position: [0, 1, 4],
+            fov: 30,
             near: 0.1,
             far: 1000,
           }}
@@ -155,13 +158,16 @@ const Contact = () => {
           />
 
           <Suspense fallback={<Loader />}>
-            <Fox
-              currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
-              rotation={[12.629, -0.6, 0]}
-              scale={[0.5, 0.5, 0.5]}
-            />
+            {/*<Fox
+          currentAnimation={currentAnimation}
+          position={[0.5, 0.35, 0]}
+          rotation={[12.629, -0.6, 0]}
+          scale={[0.5, 0.5, 0.5]}
+        />*/}
+            <Character position={[0, -1, 0]} />
           </Suspense>
+
+          <OrbitControls enableZoom={false} />
         </Canvas>
       </div>
     </section>
