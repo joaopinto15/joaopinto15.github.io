@@ -24,3 +24,12 @@ dist-ssr
 *.sw?
 *.env
 package-lock.json
+package.json
+postcss.config.js
+README.md
+tailwind.config.js
+vite.config.js
+index.html
+.eslintrc.cjs
+src/
+public/
