@@ -1,6 +1,6 @@
 # My Portfolio
 
-> This is my portfolio website. It is built using Vite, React, and Tailwind CSS.
+> This is my portfolio website. It is built using Vite, React, and Tailwind CSS (using Three.js for 3D rendering).
 
 
 
