@@ -110,3 +110,38 @@ export const projects = [
         link: 'https://github.com/joaopinto15/joaopinto15.github.io',
     }
 ];
+
+export const maps = {
+    castle_on_hills: {
+        scale: 3,
+        position: [-6, -7, 0],
+    },
+    animal_crossing_map: {
+        scale: 20,
+        position: [-15, -1, 10],
+    },
+    city_scene_tokyo: {
+        scale: 0.72,
+        position: [0, -1, -3.5],
+    },
+    de_dust_2_with_real_light: {
+        scale: 0.3,
+        position: [-5, -3, 13],
+    },
+    medieval_fantasy_book: {
+        scale: 0.4,
+        position: [-4, 0, -6],
+    },
+};
+
+
+export const playerAnimations = {
+    attack1: "merio_belt_skeleton|attack1",
+    attack2: "merio_belt_skeleton|attack2",
+    deathcam: "merio_belt_skeleton|deathcam",
+    ref: "merio_belt_skeleton|ref",
+    grab: "merio_belt_skeleton|grab",
+    run: "merio_belt_skeleton|run",
+    walk: "merio_belt_skeleton|walk",
+    idle: "merio_belt_skeleton|idle",
+};

@@ -4,20 +4,24 @@ import { Footer, Navbar } from "./components";
 import { About, Contact, Home, Projects } from "./pages";
 
 const App = () => {
+  //Manage dark mode state
   const [darkMode, setDarkMode] = useState(false);
-
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const getDarkMode = () => darkMode;
-
+  //Set dark mode on page load
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
+    document.body.classList.add('hide-scrollbar');
+    return () => {
+      document.body.classList.remove('hide-scrollbar');
+    };
   }, [darkMode]);
   return (
-    <main className='bg-slate-300/20 dark:bg-slate-900/95'>
+    <main className='bg-slate-300/20 dark:bg-slate-900/95 hide-scrollbar'>
       <Router>
         <Navbar toggleDarkMode={toggleDarkMode} />
         <Routes>

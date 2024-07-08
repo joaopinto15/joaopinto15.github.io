@@ -25,6 +25,7 @@ function renderPoint(point) {
       <a
         key={index} // Unique key based on the current index
         href={linkHref}
+        className="text-blue-500"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -57,7 +58,7 @@ const About = ({ getDarkMode }) => {
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500 dark:text-slate-100'>
         <p>
-          Software Engineer based in Portugal, currently studying at <a href="https://www.isep.ipp.pt/" target="_blank" rel="noopener noreferrer"> <strong>ISEP</strong></a>.
+          Software Engineer based in Portugal, currently studying at <a href="https://www.isep.ipp.pt/" target="_blank" className="text-blue-400" rel="noopener noreferrer"> <strong>ISEP</strong></a>.
         </p>
       </div>
 

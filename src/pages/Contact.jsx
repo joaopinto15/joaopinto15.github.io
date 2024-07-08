@@ -158,16 +158,10 @@ const Contact = () => {
           />
 
           <Suspense fallback={<Loader />}>
-            {/*<Fox
-          currentAnimation={currentAnimation}
-          position={[0.5, 0.35, 0]}
-          rotation={[12.629, -0.6, 0]}
-          scale={[0.5, 0.5, 0.5]}
-        />*/}
             <Character position={[0, -1, 0]} />
           </Suspense>
 
-          <OrbitControls enableZoom={false} />
+          <OrbitControls enableZoom={false} enablePan={false} />
         </Canvas>
       </div>
     </section>
