@@ -1,6 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { Suspense, useMemo } from 'react';
-import { Physics } from '@react-three/rapier';
+import { useMemo } from 'react';
 import { Game } from '../components';
 import { KeyboardControls } from '@react-three/drei';
 
@@ -10,6 +9,7 @@ export const Controls = {
   left: 'left',
   right: 'right',
   jump: 'jump',
+  run: 'run',
 };
 
 
@@ -20,6 +20,7 @@ const Home = () => {
     { name: Controls.back, keys: ["ArrowDown", "KeyS"] },
     { name: Controls.left, keys: ["ArrowLeft", "KeyA"] },
     { name: Controls.right, keys: ["ArrowRight", "KeyD"] },
+    { name: Controls.run, keys: ["ShiftLeft"] },
     { name: Controls.jump, keys: ["Space"] },
   ], []);
 
@@ -27,12 +28,11 @@ const Home = () => {
     <div className="h-screen w-screen">
       <KeyboardControls map={map}>
 
-        <Canvas camera={{ position: [0, 2, 5] }}>
-          <Suspense>
-            <Physics debug>
-              <Game />
-            </Physics>
-          </Suspense>
+        <Canvas
+          camera={{ position: [3, 3, 3], near: 0.1, fov: 40 }}
+          style={{ touchAction: 'none' }}
+        >
+          <Game />
         </Canvas>
       </KeyboardControls>
     </div>
