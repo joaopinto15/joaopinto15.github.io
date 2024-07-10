@@ -45,7 +45,7 @@ export const PlayerController = () => {
     );
     const { emotes } = useControls("Emotes", {
         emotes: {
-            value: Object.keys(playerAnimations)[7],
+            value: "idle",
             options: Object.keys(playerAnimations),
         },
     });
@@ -176,10 +176,10 @@ export const PlayerController = () => {
 
 
     return (
-        <RigidBody colliders={false} lockRotations ref={rb}>
+        <RigidBody colliders={false} lockRotations ref={rb} position={[0, 1, 0]}>
             <group ref={container}>
                 <group ref={cameraTarget} position-z={1.5} />
-                <group ref={cameraPosition} position-y={4} position-z={-4} />
+                <group ref={cameraPosition} position-y={20} position-z={-30} />
                 <group ref={player}>
                     <Mario scale={0.01} position-y={-0.25} animation={animation} />
                 </group>
