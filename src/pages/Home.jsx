@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
-import { useMemo, Suspense } from 'react';
-import { Game, Loader } from '../components';
+import { useMemo } from 'react';
+import { Game } from '../components';
 import { KeyboardControls } from '@react-three/drei';
 
 export const Controls = {
@@ -11,6 +11,7 @@ export const Controls = {
   jump: 'jump',
   run: 'run',
 };
+
 
 const Home = () => {
 
@@ -25,19 +26,16 @@ const Home = () => {
 
   return (
     <div className="h-screen w-screen">
-      <Canvas
-        camera={{ position: [3, 3, 3], near: 0.1, fov: 40 }}
-        style={{ touchAction: 'none' }}
-      >
-        <Suspense fallback={<Loader />}>
-          <KeyboardControls map={map}>
-            <Game />
-          </KeyboardControls>
-        </Suspense>
+      <KeyboardControls map={map}>
 
-      </Canvas>
+        <Canvas
+          camera={{ position: [3, 3, 3], near: 0.1, fov: 40 }}
+          style={{ touchAction: 'none' }}
+        >
+          <Game />
+        </Canvas>
+      </KeyboardControls>
     </div>
-
   );
 }
 
