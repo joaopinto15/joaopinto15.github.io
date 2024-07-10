@@ -11,7 +11,7 @@ const Game = () => {
     const shadowCameraRef = useRef();
     const { map } = useControls("Map", {
         map: {
-            value: "castle_on_hills",
+            value: "a_quiet_place",
             options: Object.keys(maps),
         },
     })
