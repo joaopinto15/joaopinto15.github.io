@@ -112,25 +112,9 @@ export const projects = [
 ];
 
 export const maps = {
-    castle_on_hills: {
+    a_quiet_place: {
         scale: 3,
-        position: [-6, -7, 0],
-    },
-    animal_crossing_map: {
-        scale: 20,
-        position: [-15, -1, 10],
-    },
-    city_scene_tokyo: {
-        scale: 0.72,
-        position: [0, -1, -3.5],
-    },
-    de_dust_2_with_real_light: {
-        scale: 0.3,
-        position: [-5, -3, 13],
-    },
-    medieval_fantasy_book: {
-        scale: 0.4,
-        position: [-4, 0, -6],
+        position: [0, 0, 0],
     },
 };
 
