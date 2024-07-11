@@ -7,6 +7,7 @@ import { CTA } from "../components";
 import { experiences, skills } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
+import { Link } from "react-router-dom";
 
 function renderPoint(point) {
   // [example](https://www.example.com)
@@ -41,6 +42,38 @@ function renderPoint(point) {
   return segments;
 }
 
+function RenderSkills({ type, shadow }) {
+  return (
+    <>
+      <div style={{ height: '2rem' }} />
+      <h5 className="subhead-text-smaller text-black dark:text-white">{type}</h5>
+      <div className='mt-16 flex flex-wrap gap-12'>
+        {skills.filter(skill => skill.type === type).map(skill => (
+          <Link
+            key={skill.name}
+            to={skill.url}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <div className='block-container w-20 h-20'>
+              <div className={`${shadow()} rounded-xl`} />
+              <div className='btn-front rounded-xl flex justify-center items-center'>
+                <img
+                  src={skill.imageUrl}
+                  alt={skill.name}
+                  className='w-1/2 h-1/2 object-contain'
+                />
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </>
+  )
+
+
+}
+
 const About = ({ getDarkMode }) => {
   const darkmodeColor = () => getDarkMode() ? 'rgb(15 23 42 / 0.95)' : 'rgb(255,255,255)';
   const shadow = () => getDarkMode() ? "btn-dark" : "btn-back";
@@ -63,22 +96,10 @@ const About = ({ getDarkMode }) => {
       </div>
 
       <div className='py-10 flex flex-col'>
-        <h3 className='subhead-text text-black dark:text-white '>Used Technologies</h3>
+        <h3 className='subhead-text text-black dark:text-white'>Used Technologies</h3>
+        <RenderSkills type="FrontEnd" shadow={shadow} />
+        <RenderSkills type="BackEnd" shadow={shadow} />
 
-        <div className='mt-16 flex flex-wrap gap-12'>
-          {skills.map((skill) => (
-            <div className='block-container w-20 h-20' key={skill.name}>
-              <div className={`${shadow()} rounded-xl`} />
-              <div className='btn-front rounded-xl flex justify-center items-center'>
-                <img
-                  src={skill.imageUrl}
-                  alt={skill.name}
-                  className='w-1/2 h-1/2 object-contain'
-                />
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
 
       <div className='py-16'>

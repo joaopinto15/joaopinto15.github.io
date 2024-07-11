@@ -5,6 +5,10 @@ import {
     summiz,
     threads,
 } from "../assets/icons";
+import {
+    c, java, javascript, nodejs, react, tailwindcss, sql, blender, threejs, vite, python
+} from "../assets/icons/skills";
+
 
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
@@ -12,35 +16,72 @@ import { IoMdContact } from "react-icons/io";
 
 export const skills = [
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+        imageUrl: java,
         name: "Java",
-        type: "Backend",
+        type: "BackEnd",
+        url: "https://www.java.com/en/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
+        imageUrl: c,
         name: "C",
-        type: "Backend",
+        type: "BackEnd",
+        url: "https://en.wikipedia.org/wiki/C_(programming_language)",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+        imageUrl: javascript,
         name: "Javascript",
-        type: "Frontend",
+        type: "FrontEnd",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+        imageUrl: react,
         name: "React",
-        type: "Frontend",
+        type: "FrontEnd",
+        url: "https://reactjs.org/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
+        imageUrl: nodejs,
         name: "node.js",
-        type: "Backend",
+        type: "BackEnd",
+        url: "https://nodejs.org/en/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+        imageUrl: tailwindcss,
         name: "Tailwind CSS",
-        type: "Frontend",
+        type: "FrontEnd",
+        url: "https://tailwindcss.com/",
     },
+    {
+        imageUrl: sql,
+        name: "SQL",
+        type: "BackEnd",
+        url: "https://www.w3schools.com/sql/",
+    },
+    {
+        imageUrl: blender,
+        name: "Blender",
+        type: "BackEnd",
+        url: "https://www.blender.org/",
+    },
+    {
+        imageUrl: threejs,
+        name: "Three.js",
+        type: "FrontEnd",
+        url: "https://threejs.org/",
+    },
+    {
+        imageUrl: vite,
+        name: "Vite",
+        type: "FrontEnd",
+        url: "https://vitejs.dev/",
+    },
+    {
+        imageUrl: python,
+        name: "Python",
+        type: "BackEnd",
+        url: "https://www.python.org/",
+    },
+
 
 ];
 /**

@@ -6,7 +6,7 @@ export function Map(props) {
     const { nodes, materials } = useGLTF(scene);
     return (
         <RigidBody type="fixed" colliders="trimesh">
-            <group {...props} dispose={null}>
+            <group {...props} rotation={[0, 1.80, 0]} dispose={null}>
                 <group rotation={[-Math.PI / 2, 0, 0]}>
                     <mesh
                         castShadow
