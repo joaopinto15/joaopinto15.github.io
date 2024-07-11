@@ -34,6 +34,10 @@ body:has(.card[data-color="green"]:hover) {
     @apply font-semibold sm:text-3xl text-xl relative font-poppins;
   }
 
+  .subhead-text-smaller {
+    @apply sm:text-2xl text-lg relative font-poppins;
+  }
+
   .blue-gradient_text {
     @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
   }
@@ -114,8 +118,18 @@ body:has(.card[data-color="green"]:hover) {
   box-shadow: 16px 0 40px #e4e4e4;
 }
 
-.block-container .btn-back .btn-dark {
-  box-shadow: 16px 0 40px #00000033;
+.block-container .btn-dark {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: bottom right;
+  transform: rotateZ(15deg);
+  will-change: transform;
+  box-shadow: 16px 0 40px #000003;
 }
 
 .block-container .btn-back-red {

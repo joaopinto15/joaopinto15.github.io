@@ -34,7 +34,6 @@ const Home = () => {
             <Game />
           </KeyboardControls>
         </Suspense>
-
       </Canvas>
     </div>
 
