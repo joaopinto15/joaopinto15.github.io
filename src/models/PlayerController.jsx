@@ -33,7 +33,7 @@ export const PlayerController = () => {
         "Player Control",
         {
             WALK_SPEED: { value: 0.7, min: 0.5, max: 2 },
-            RUN_SPEED: { value: 0.7, min: 0.5, max: 2 },
+            RUN_SPEED: { value: 1.3, min: 0.5, max: 2 },
             ROTATION_SPEED: {
                 value: degToRad(0.5),
                 min: degToRad(0.1),
@@ -176,15 +176,15 @@ export const PlayerController = () => {
 
 
     return (
-        <RigidBody colliders={false} lockRotations ref={rb} position={[0, 1, 0]}>
+        <RigidBody colliders={false} lockRotations ref={rb} position={[0, 2, 0]}>
             <group ref={container}>
                 <group ref={cameraTarget} position-z={1.5} />
-                <group ref={cameraPosition} position-y={20} position-z={-30} />
+                <group ref={cameraPosition} position-y={5} position-z={-10} />
                 <group ref={player}>
-                    <Mario scale={0.01} position-y={-0.25} animation={animation} />
+                    <Mario scale={0.01} position-y={-1.1} animation={animation} />
                 </group>
             </group>
-            <CapsuleCollider args={[0.08, 0.15]} />
+            <CapsuleCollider args={[0.6, 0.5]} />
         </RigidBody>
     )
 }

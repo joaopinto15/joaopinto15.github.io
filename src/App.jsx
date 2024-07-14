@@ -15,13 +15,10 @@ const App = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
-    document.body.classList.add('hide-scrollbar');
-    return () => {
-      document.body.classList.remove('hide-scrollbar');
-    };
   }, [darkMode]);
+
   return (
-    <main className='bg-slate-300/20 dark:bg-slate-900/95 hide-scrollbar'>
+    <main className='bg-slate-300/20 dark:bg-slate-900/95'>
       <Router>
         <Navbar toggleDarkMode={toggleDarkMode} />
         <Routes>

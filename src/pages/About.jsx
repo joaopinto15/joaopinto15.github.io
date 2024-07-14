@@ -45,7 +45,7 @@ function renderPoint(point) {
 function RenderSkills({ type, shadow }) {
   return (
     <>
-      <div style={{ height: '2rem' }} />
+      <div className='h-10' />
       <h5 className="subhead-text-smaller text-black dark:text-white">{type}</h5>
       <div className='mt-16 flex flex-wrap gap-12'>
         {skills.filter(skill => skill.type === type).map(skill => (

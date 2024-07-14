@@ -161,12 +161,9 @@ export const maps = {
 
 
 export const playerAnimations = {
-    attack1: "merio_belt_skeleton|attack1",
-    attack2: "merio_belt_skeleton|attack2",
-    deathcam: "merio_belt_skeleton|deathcam",
-    ref: "merio_belt_skeleton|ref",
-    grab: "merio_belt_skeleton|grab",
-    run: "merio_belt_skeleton|run",
-    walk: "merio_belt_skeleton|walk",
-    idle: "merio_belt_skeleton|idle",
+    sitUp: "sitUp",
+    sit: "sit",
+    run: "run",
+    walk: "walk",
+    idle: "idle",
 };

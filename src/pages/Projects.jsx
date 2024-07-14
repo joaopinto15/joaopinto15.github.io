@@ -18,11 +18,9 @@ const Projects = ({ getDarkMode }) => {
       </h1>
 
       <p className='text-slate-500 dark:text-slate-100 mt-2 leading-relaxed'>
-        I've embarked on numerous projects throughout the years, but these are
-        the ones I hold closest to my heart. Many of them are open-source, so if
-        you come across something that piques your interest, feel free to
-        explore the codebase and contribute your ideas for further enhancements.
-        Your collaboration is highly valued!
+        As a dedicated software engineer, I have had the opportunity to work on
+        a diverse range of projects that showcase my skills in software development,
+        problem-solving, and innovation.
       </p>
 
       <div className='flex flex-wrap my-20 gap-16'>
@@ -65,8 +63,9 @@ const Projects = ({ getDarkMode }) => {
       </div>
 
       <hr className='border-slate-200 dark:border-slate-700' />
-
       <CTA />
+      {/* TODO: Fix weird margin*/}
+      <div className='h-20' />
     </section>
   );
 };

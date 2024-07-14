@@ -38,7 +38,7 @@ const Game = () => {
                     attach={"shadow-camera"}
                 />
             </directionalLight>
-            <Physics key={map}>
+            <Physics debug key={map}>
                 <Map />
                 <PlayerController />
             </Physics>

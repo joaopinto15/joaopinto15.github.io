@@ -12,7 +12,6 @@ import python from "./python-original.svg";
 
 
 export {
-
     c,
     java,
     javascript,

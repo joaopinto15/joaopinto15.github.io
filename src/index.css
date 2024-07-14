@@ -11,6 +11,8 @@
 
 body {
   font-family: "Work Sans", sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body:has(.card[data-color="blue"]:hover) {
@@ -238,16 +240,4 @@ textarea::placeholder {
   /* Firefox */
   -ms-user-select: none;
   /* IE/Edge */
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  /* Internet Explorer 10+ */
-  scrollbar-width: none;
-  overflow: auto;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-  /* Safari and Chrome */
 }
