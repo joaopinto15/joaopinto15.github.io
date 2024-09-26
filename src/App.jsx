@@ -1,7 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Footer, Navbar } from "./components";
-import { About, Contact, Home, Projects } from "./pages";
+import { About, Contact, Home, Projects, PageNotFound } from "./pages";
+
 
 const App = () => {
   //Manage dark mode state
@@ -31,6 +32,7 @@ const App = () => {
                   <Route path='/about' element={<About getDarkMode={getDarkMode} />} />
                   <Route path='/projects' element={<Projects getDarkMode={getDarkMode} />} />
                   <Route path='/contact' element={<Contact />} />
+                  <Route path='*' element={<PageNotFound />} />
                 </Routes>
                 <Footer />
               </>
