@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import DarkModeButton from "./DarkModeButton";
 import Game from "./Game";
-
+import Overlay from "./Overlay";
 export {
     CTA,
     Alert,
@@ -14,4 +14,5 @@ export {
     Footer,
     DarkModeButton,
     Game,
+    Overlay,
 }

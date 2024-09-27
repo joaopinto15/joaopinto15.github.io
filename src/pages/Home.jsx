@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import { useMemo, Suspense } from 'react';
-import { Game, Loader } from '../components';
+import { Game, Loader, Overlay } from '../components';
 import { KeyboardControls } from '@react-three/drei';
 
 export const Controls = {
@@ -35,6 +35,7 @@ const Home = () => {
           </KeyboardControls>
         </Suspense>
       </Canvas>
+      <Overlay />
     </div>
 
   );
