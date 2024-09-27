@@ -10,6 +10,7 @@ export default {
       colors: {
         customGray: '#cfcfcf',
         customGrayDark: '#4A4A4A',
+        offWhite: '#F0F0F0',
         gray: {
           200: "#D5DAE1"
         },

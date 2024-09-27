@@ -9,7 +9,7 @@ const Overlay = () => {
     return (
         <div id='overlay' className={`absolute bottom-4 right-4 w-30 h-30 flex items-center justify-center`}>
             <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
-                <div class="w-2 bg-gray-800"></div>
+                <div class="w-4 bg-gray-800"></div>
                 <div class="flex items-center px-2 py-3">
                     <img class="w-12 h-12 object-cover rounded-full" src="https://github.com/joaopinto15.png" />
                     <div class="mx-3">

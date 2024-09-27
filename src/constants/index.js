@@ -12,6 +12,8 @@ import {
 
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
+import { SiCredly } from "react-icons/si";
+
 
 
 export const skills = [
@@ -148,23 +150,29 @@ export const socialLinks = [
         icon: FaLinkedin,
         link: 'https://www.linkedin.com/in/joaopinto15/',
         color: 'text-blue-500',
+    },
+    {
+        name: 'Credly',
+        icon: SiCredly,
+        link: 'https://www.credly.com/users/joaopinto15/badges',
+        color: 'text-black dark:text-white',
     }
 ];
 
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Todo Full Stack App',
-        description: '...',
-        link: 'https://github.com/joaopinto15/todo_fullstackapp',
+        iconUrl: 'https://avatars.githubusercontent.com/u/182362816?s=200&v=4',
+        theme: 'btn-back-black',
+        name: 'PureNimble Website',
+        description: 'Official website of PureNimble organization',
+        link: 'https://purenimble.github.io/',
     },
     {
-        iconUrl: threads,
-        theme: 'btn-back-blue',
-        name: 'Web Portfolio',
-        description: 'This is my personal portfolio website, built with React and Tailwind CSS.',
-        link: 'https://github.com/joaopinto15/joaopinto15.github.io',
+        iconUrl: 'https://avatars.githubusercontent.com/u/182362816?s=200&v=4',
+        theme: 'btn-back-black',
+        name: 'PureNimble',
+        description: 'Organization where I develop all my projects from university.',
+        link: 'https://github.com/PureNimble',
     }
 ];
 

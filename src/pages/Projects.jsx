@@ -64,8 +64,6 @@ const Projects = ({ getDarkMode }) => {
 
       <hr className='border-slate-200 dark:border-slate-700' />
       <CTA />
-      {/* TODO: Fix weird margin*/}
-      <div className='h-20' />
     </section>
   );
 };

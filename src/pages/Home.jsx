@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { useMemo, Suspense } from 'react';
 import { Game, Loader, Overlay } from '../components';
 import { KeyboardControls } from '@react-three/drei';
+import { Leva } from 'leva';
 
 export const Controls = {
   forward: 'forward',
@@ -29,6 +30,7 @@ const Home = () => {
         camera={{ position: [3, 3, 3], near: 0.1, fov: 40 }}
         style={{ touchAction: 'none' }}
       >
+        <Leva hidden />
         <Suspense fallback={<Loader />}>
           <KeyboardControls map={map}>
             <Game />
