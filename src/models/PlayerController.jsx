@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useKeyboardControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { RigidBody, CapsuleCollider } from '@react-three/rapier';
-import { Mario } from '../models';
+import { MainPlayer } from '../models';
 import { useControls } from 'leva';
 import { degToRad } from 'three/src/math/MathUtils.js';
 import { playerAnimations } from '../constants';
@@ -181,7 +181,7 @@ export const PlayerController = () => {
                 <group ref={cameraTarget} position-z={1.5} />
                 <group ref={cameraPosition} position-y={5} position-z={-10} />
                 <group ref={player}>
-                    <Mario scale={0.01} position-y={-1.1} animation={animation} />
+                    <MainPlayer scale={0.01} position-y={-1.1} animation={animation} />
                 </group>
             </group>
             <CapsuleCollider args={[0.6, 0.5]} />

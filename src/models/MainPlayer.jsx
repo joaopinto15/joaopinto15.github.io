@@ -10,7 +10,7 @@ import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import scene from '../assets/3d/bob.glb'
 
-export function Mario({ animation, ...props }) {
+export function MainPlayer({ animation, ...props }) {
     const group = useRef()
     const { nodes, materials, animations } = useGLTF(scene)
     const { actions } = useAnimations(animations, group)

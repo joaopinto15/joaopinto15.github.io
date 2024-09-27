@@ -115,19 +115,19 @@ const About = ({ getDarkMode }) => {
 
         <div className='mt-12 flex'>
           <VerticalTimeline lineColor={darkmodeColor()}>
-            {experiences.map((experience, index) => (
+            {experiences.map((experience) => (
               <VerticalTimelineElement
                 key={experience.company_name}
                 date={experience.date}
                 dateClassName="text-black dark:text-white"
                 iconStyle={{ background: experience.iconBg }}
-
+                iconOnClick={() => window.open(experience.url, "_blank")}
                 icon={
                   <div className='flex justify-center items-center w-full h-full'>
                     <img
                       src={experience.icon}
                       alt={experience.company_name}
-                      className='w-[60%] h-[60%] object-contain'
+                      className='w-[60%] h-[60%] object-contain rounded-full'
                     />
                   </div>
                 }

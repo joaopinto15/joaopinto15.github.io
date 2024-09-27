@@ -1,5 +1,4 @@
-export { Player } from "./Player";
-export { Character } from "./Character";
+export { MainPlayer } from "./MainPlayer";
 export { Map } from "./Map";
+export { Character } from "./Character";
 export { PlayerController } from "./PlayerController";
-export { Mario } from "./Mario";

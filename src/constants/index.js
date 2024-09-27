@@ -91,8 +91,9 @@ export const experiences = [
     {
         title: "Federated Sports",
         company_name: "Basketball",
+        url: "https://www.fpb.pt/",
         icon: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F631%2F451%2Foriginal%2Fbasketball-icon-symbol-sign-vector.jpg&f=1&nofb=1&ipt=38fa376762caec80703ddbbe952909148a8ab9942987ef50212036854e1baf98&ipo=images",
-        iconBg: "#accbe1",
+        iconBg: "#b7e4c7",
         date: "January 2006 - April 2020",
         points: [
             "I have several years of experience playing basketball, which has accustomed me to teamwork, respecting others, listening, and learning from each team member.",
@@ -102,6 +103,7 @@ export const experiences = [
     {
         title: "University of Porto",
         company_name: "ISEP",
+        url: "https://www.isep.ipp.pt/",
         icon: "https://external-content.duckduckgo.com/ip3/portal.isep.ipp.pt.ico",
         iconBg: "#fbc3bc",
         date: "January 2022 - April 2025",
@@ -110,6 +112,20 @@ export const experiences = [
             "The main knowledge areas covered are: Software Patterns, Databases, Operating Systems, Computer Networks, and Web Development.",
             "I've primarily employed [Scrum](https://scrum.org) and Agile methodologies for managing and developing projects.",
             "Participating in code reviews and providing constructive feedback to other developers.",
+        ],
+    },
+    {
+        title: "Student Exchange Program",
+        company_name: "Technical University of Sofia",
+        url: "https://www.tu-sofia.bg/",
+        icon: "https://www.jaunty.eu/wp-content/uploads/2021/03/Technical-University-Sofia-1.png",
+        iconBg: "#accbe1",
+        date: "Setember 2024 - January 2025",
+        points: [
+            "Through the [Eramus+](https://erasmus-plus.ec.europa.eu/) program, I had the invaluable opportunity to study in Bulgaria for a semester",
+            "During this time, I adapted to a new culture, language, and educational system, which significantly enriched my personal and academic growth.",
+            "Additionally, my communication skills improved as I navigated daily interactions in English, which is not my native language, helping me become more confident and fluent in an international setting.",
+
         ],
     },
 ];
@@ -130,7 +146,7 @@ export const socialLinks = [
     {
         name: 'LinkedIn',
         icon: FaLinkedin,
-        link: 'https://www.linkedin.com/in/jo%C3%A3o-pinto-92891b250/',
+        link: 'https://www.linkedin.com/in/joaopinto15/',
         color: 'text-blue-500',
     }
 ];
