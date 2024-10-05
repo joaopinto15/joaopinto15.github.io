@@ -5,10 +5,6 @@ import {
     summiz,
     threads,
 } from "../assets/icons";
-import {
-    c, java, javascript, nodejs, react, tailwindcss, sql, blender, threejs, vite, python
-} from "../assets/icons/skills";
-
 
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
@@ -18,67 +14,55 @@ import { SiCredly } from "react-icons/si";
 
 export const skills = [
     {
-        imageUrl: java,
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
+        name: "Rust",
+        type: "BackEnd",
+        url: "https://www.rust-lang.org/",
+    },
+    {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
         name: "Java",
         type: "BackEnd",
         url: "https://www.java.com/en/",
     },
     {
-        imageUrl: c,
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
         name: "C",
         type: "BackEnd",
         url: "https://en.wikipedia.org/wiki/C_(programming_language)",
     },
     {
-        imageUrl: javascript,
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
         name: "Javascript",
         type: "FrontEnd",
         url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
     {
-        imageUrl: react,
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
         name: "React",
         type: "FrontEnd",
         url: "https://reactjs.org/",
     },
     {
-        imageUrl: nodejs,
-        name: "node.js",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg",
+        name: "deno.js",
         type: "BackEnd",
-        url: "https://nodejs.org/en/",
+        url: "https://deno.com/",
     },
     {
-        imageUrl: tailwindcss,
-        name: "Tailwind CSS",
-        type: "FrontEnd",
-        url: "https://tailwindcss.com/",
-    },
-    {
-        imageUrl: sql,
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
         name: "SQL",
         type: "BackEnd",
-        url: "https://www.w3schools.com/sql/",
+        url: "https://www.mysql.com/",
     },
     {
-        imageUrl: blender,
-        name: "Blender",
-        type: "BackEnd",
-        url: "https://www.blender.org/",
-    },
-    {
-        imageUrl: threejs,
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg",
         name: "Three.js",
         type: "FrontEnd",
         url: "https://threejs.org/",
     },
     {
-        imageUrl: vite,
-        name: "Vite",
-        type: "FrontEnd",
-        url: "https://vitejs.dev/",
-    },
-    {
-        imageUrl: python,
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
         name: "Python",
         type: "BackEnd",
         url: "https://www.python.org/",
@@ -170,9 +154,16 @@ export const projects = [
     {
         iconUrl: 'https://avatars.githubusercontent.com/u/182362816?s=200&v=4',
         theme: 'btn-back-black',
-        name: 'PureNimble',
-        description: 'Organization where I develop all my projects from university.',
-        link: 'https://github.com/PureNimble',
+        name: 'HairDrop',
+        description: 'This project is a service designed to seamlessly connect users with hair salons, barbershops, and independent hairstylists, offering a modern, on-demand solution for hair care.',
+        link: 'https://hairdrop.me',
+    }
+];
+
+export const overlay = [
+    {
+        title: "Welcome to my web portfolio!",
+        description: "Explore my work and don't miss the 3D animation section for an immersive experience. Enjoy!",
     }
 ];
 
@@ -185,9 +176,12 @@ export const maps = {
 
 
 export const playerAnimations = {
-    sitUp: "sitUp",
-    sit: "sit",
-    run: "run",
-    walk: "walk",
-    idle: "idle",
+
+    idle: "Idle",
+    idle2: "Idle 2",
+    walk: "Walk",
+    run: "Run",
+    pointing: "Pointing",
+    pointingUp: "Pointing Up",
+    dance: "Dance",
 };

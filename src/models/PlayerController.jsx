@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useKeyboardControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { RigidBody, CapsuleCollider } from '@react-three/rapier';
-import { MainPlayer } from '../models';
+import { Player } from '../models';
 import { useControls } from 'leva';
 import { degToRad } from 'three/src/math/MathUtils.js';
 import { playerAnimations } from '../constants';
@@ -32,8 +32,8 @@ export const PlayerController = () => {
     const { WALK_SPEED, RUN_SPEED, ROTATION_SPEED } = useControls(
         "Player Control",
         {
-            WALK_SPEED: { value: 0.7, min: 0.5, max: 2 },
-            RUN_SPEED: { value: 1.3, min: 0.5, max: 2 },
+            WALK_SPEED: { value: 1, min: 0.5, max: 2 },
+            RUN_SPEED: { value: 3, min: 0.5, max: 5 },
             ROTATION_SPEED: {
                 value: degToRad(0.5),
                 min: degToRad(0.1),
@@ -109,7 +109,6 @@ export const PlayerController = () => {
             let speed = get().run ? RUN_SPEED : WALK_SPEED;
 
             if (isClicking.current) {
-                //console.log("clicking", mouse.x, mouse.y);
                 if (Math.abs(mouse.x) > 0.1) {
                     movement.x = -mouse.x;
                 }
@@ -144,7 +143,10 @@ export const PlayerController = () => {
                     setAnimation(playerAnimations.walk);
                 }
             } else {
-                setAnimation(playerAnimations[emotes]);
+                setAnimation(playerAnimations.idle);
+                if (get().dance) {
+                    setAnimation(playerAnimations.dance);
+                }
 
             }
             player.current.rotation.y = lerpAngle(
@@ -181,10 +183,10 @@ export const PlayerController = () => {
                 <group ref={cameraTarget} position-z={1.5} />
                 <group ref={cameraPosition} position-y={5} position-z={-10} />
                 <group ref={player}>
-                    <MainPlayer scale={0.01} position-y={-1.1} animation={animation} />
+                    <Player scale={1.2} position-y={-1.1} animation={animation} />
                 </group>
             </group>
-            <CapsuleCollider args={[0.6, 0.5]} />
+            <CapsuleCollider args={[0.7, 0.4]} />
         </RigidBody>
     )
 }

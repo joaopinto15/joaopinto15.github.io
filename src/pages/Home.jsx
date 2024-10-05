@@ -22,15 +22,16 @@ const Home = () => {
     { name: Controls.right, keys: ["ArrowRight", "KeyD"] },
     { name: Controls.run, keys: ["ShiftLeft"] },
     { name: Controls.jump, keys: ["Space"] },
+    { name: Controls.dance, keys: ["KeyH"] },
   ], []);
 
   return (
     <div className="h-screen w-screen">
+      <Leva hidden />
       <Canvas
         camera={{ position: [3, 3, 3], near: 0.1, fov: 40 }}
         style={{ touchAction: 'none' }}
       >
-        <Leva hidden />
         <Suspense fallback={<Loader />}>
           <KeyboardControls map={map}>
             <Game />

@@ -2,8 +2,9 @@ import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Suspense, useRef, useState } from "react";
+import { playerAnimations } from "../constants";
 
-import { Character } from "../models";
+import { Player } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
 
@@ -14,19 +15,19 @@ const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
-  const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const [animation, setCurrentAnimation] = useState(playerAnimations.idle);
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleFocus = () => setCurrentAnimation("walk");
-  const handleBlur = () => setCurrentAnimation("idle");
+  const handleFocus = () => setCurrentAnimation(playerAnimations.walk);
+  const handleBlur = () => setCurrentAnimation(playerAnimations.idle);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setCurrentAnimation("hit");
+    setCurrentAnimation(playerAnimations.dance);
 
     emailjs
       .send(
@@ -50,7 +51,7 @@ const Contact = () => {
 
           setTimeout(() => {
             hideAlert(false);
-            setCurrentAnimation("idle");
+            setCurrentAnimation(playerAnimations.idle);
             setForm({
               name: "",
               email: "",
@@ -61,7 +62,7 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-          setCurrentAnimation("idle");
+          setCurrentAnimation(playerAnimations.idle);
 
           showAlert({
             show: true,
@@ -158,7 +159,7 @@ const Contact = () => {
           />
 
           <Suspense fallback={<Loader />}>
-            <Character position={[0, -1, 0]} />
+            <Player position={[0, -1, 0]} animation={animation} />
           </Suspense>
 
           <OrbitControls enableZoom={false} enablePan={false} />
