@@ -18,9 +18,8 @@ const Projects = ({ getDarkMode }) => {
       </h1>
 
       <p className='text-slate-500 dark:text-slate-100 mt-2 leading-relaxed'>
-        As a dedicated software engineer, I have had the opportunity to work on
-        a diverse range of projects that showcase my skills in software development,
-        problem-solving, and innovation.
+        As a junior software developer, I am still building my portfolio and gaining experience.
+        While I don't have many projects yet, I am eager to learn and grow in the field of software development.
       </p>
 
       <div className='flex flex-wrap my-20 gap-16'>

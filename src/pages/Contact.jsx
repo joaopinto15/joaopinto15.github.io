@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 import { playerAnimations } from "../constants";
 
 import { Player } from "../models";
@@ -17,12 +17,23 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [animation, setCurrentAnimation] = useState(playerAnimations.idle);
 
-  const handleChange = ({ target: { name, value } }) => {
-    setForm({ ...form, [name]: value });
-  };
+  useEffect(() => {
+    // First time pointing
+    setCurrentAnimation(playerAnimations.pointing);
+    setTimeout(() => {
+      setCurrentAnimation(playerAnimations.idle);
+    }, 4000); // Change back to idle after 4 seconds
 
-  const handleFocus = () => setCurrentAnimation(playerAnimations.walk);
-  const handleBlur = () => setCurrentAnimation(playerAnimations.idle);
+    // Every 10 seconds, switch to idle2
+    const interval = setInterval(() => {
+      setCurrentAnimation(playerAnimations.idle2);
+      setTimeout(() => {
+        setCurrentAnimation(playerAnimations.idle);
+      }, 4000); // Change back to idle after 4 seconds
+    }, 20000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -94,9 +105,6 @@ const Contact = () => {
               placeholder='John'
               required
               value={form.name}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
             />
           </label>
           <label className='text-black-500 dark:text-gray-200 font-semibold'>
@@ -108,9 +116,6 @@ const Contact = () => {
               placeholder='John@gmail.com'
               required
               value={form.email}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
             />
           </label>
           <label className='text-black-500 dark:text-gray-200 font-semibold'>
@@ -121,9 +126,6 @@ const Contact = () => {
               className=' textarea  dark:bg-slate-800 dark:text-white'
               placeholder='Write your thoughts here...'
               value={form.message}
-              onChange={handleChange}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
             />
           </label>
 
@@ -131,8 +133,6 @@ const Contact = () => {
             type='submit'
             disabled={loading}
             className='btn'
-            onFocus={handleFocus}
-            onBlur={handleBlur}
           >
             {loading ? "Sending..." : "Submit"}
           </button>
@@ -159,8 +159,7 @@ const Contact = () => {
           />
 
           <Suspense fallback={<Loader />}>
-            <Player position={[0, -1, 0]} animation={animation} />
-          </Suspense>
+            <Player scale={0.9} rotation={[0, -Math.PI / 3, 0]} position={[0, -1, 0]} animation={animation} />          </Suspense>
 
           <OrbitControls enableZoom={false} enablePan={false} />
         </Canvas>
