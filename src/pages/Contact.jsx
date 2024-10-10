@@ -8,8 +8,6 @@ import { Player } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
 
-
-
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -34,6 +32,11 @@ const Contact = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevForm) => ({ ...prevForm, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,7 +71,7 @@ const Contact = () => {
               email: "",
               message: "",
             });
-          }, [3000]);
+          }, 3000);
         },
         (error) => {
           setLoading(false);
@@ -101,10 +104,11 @@ const Contact = () => {
             <input
               type='text'
               name='name'
-              className=' input dark:bg-slate-800 dark:text-white'
+              className='input dark:bg-slate-800 dark:text-white'
               placeholder='John'
               required
               value={form.name}
+              onChange={handleChange}
             />
           </label>
           <label className='text-black-500 dark:text-gray-200 font-semibold'>
@@ -116,6 +120,7 @@ const Contact = () => {
               placeholder='John@gmail.com'
               required
               value={form.email}
+              onChange={handleChange}
             />
           </label>
           <label className='text-black-500 dark:text-gray-200 font-semibold'>
@@ -123,9 +128,10 @@ const Contact = () => {
             <textarea
               name='message'
               rows='4'
-              className=' textarea  dark:bg-slate-800 dark:text-white'
+              className='textarea dark:bg-slate-800 dark:text-white'
               placeholder='Write your thoughts here...'
               value={form.message}
+              onChange={handleChange}
             />
           </label>
 
@@ -159,7 +165,8 @@ const Contact = () => {
           />
 
           <Suspense fallback={<Loader />}>
-            <Player scale={0.9} rotation={[0, -Math.PI / 3, 0]} position={[0, -1, 0]} animation={animation} />          </Suspense>
+            <Player scale={0.9} rotation={[0, -Math.PI / 3, 0]} position={[0, -1, 0]} animation={animation} />
+          </Suspense>
 
           <OrbitControls enableZoom={false} enablePan={false} />
         </Canvas>
