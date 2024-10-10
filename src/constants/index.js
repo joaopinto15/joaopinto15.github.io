@@ -146,17 +146,19 @@ export const socialLinks = [
 export const projects = [
     {
         iconUrl: 'https://avatars.githubusercontent.com/u/182362816?s=200&v=4',
-        theme: 'btn-back-black',
+        theme: 'btn-back-pink',
         name: 'PureNimble Website',
         description: 'Official website of PureNimble organization',
-        link: 'https://purenimble.github.io/',
+        link: 'https://github.com/PureNimble',
+        website: 'https://purenimble.github.io/',
     },
     {
         iconUrl: 'https://avatars.githubusercontent.com/u/182362816?s=200&v=4',
-        theme: 'btn-back-black',
+        theme: 'btn-back-pink',
         name: 'HairDrop',
         description: 'This project is a service designed to seamlessly connect users with hair salons, barbershops, and independent hairstylists, offering a modern, on-demand solution for hair care.',
-        link: 'https://hairdrop.me',
+        link: 'https://github.com/PureNimble/hairdrop',
+        website: 'https://hairdrop.me',
     }
 ];
 

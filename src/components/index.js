@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import DarkModeButton from "./DarkModeButton";
 import Game from "./Game";
 import Overlay from "./Overlay";
+import ProjectCard from "./ProjectCard";
 export {
     CTA,
     Alert,
@@ -14,5 +15,6 @@ export {
     Footer,
     DarkModeButton,
     Game,
+    ProjectCard,
     Overlay,
 }
