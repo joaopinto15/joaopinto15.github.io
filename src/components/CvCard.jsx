@@ -7,7 +7,7 @@ const CvCard = () => {
                 <p className="text-xs">Software Engineer</p>
             </div>
             <button
-                onClick={() => window.open("https://docs.google.com/document/d/11izvlMLO1fWY6MT81BcfdzpdPRoXUV8XpRYIz-kP4bI/edit?usp=sharing", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/1Vx1FH8Js-OqCvQywHaqEmDdvL98Ova0R/view?usp=sharing", "_blank")}
                 className="duration-300 hover:bg-sky-900 border hover:text-gray-50 bg-gray-50 font-semibold text-sky-800 px-3 py-2 flex flex-row items-center gap-3 rounded-3xl">
                 Download CV
                 <svg className="w-6 h-6 fill-current" height="100" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="100" x="0" xmlns="http://www.w3.org/2000/svg" y="0">

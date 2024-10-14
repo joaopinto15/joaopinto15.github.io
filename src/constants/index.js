@@ -178,7 +178,6 @@ export const maps = {
 
 
 export const playerAnimations = {
-
     idle: "Idle",
     idle2: "Idle 2",
     walk: "Walk",
@@ -187,12 +186,6 @@ export const playerAnimations = {
     pointingUp: "Pointing Up",
     dance: "Dance",
 };
-
-export const weather = {
-    LOCATION: "Sofia,BG",
-    API_KEY: import.meta.env.API_KEY,
-    BASE_URL: "https://api.openweathermap.org/data/2.5/forecast",
-}
 
 export const weatherIcons = {
     "01d": WiDaySunny,

@@ -1,6 +1,5 @@
 // src/services/weatherService.js
 import axios from 'axios';
-import { weather } from '../constants';
 
 const CACHE_KEY = 'weatherData';
 const CACHE_TIMESTAMP_KEY = 'weatherDataTimestamp';
@@ -34,12 +33,12 @@ export const fetchWeather = async () => {
         }
 
         // Fetch fresh weather data from the API
-        const response = await axios.get(weather.BASE_URL, {
+        const response = await axios.get("https://api.openweathermap.org/data/2.5/forecast", {
             params: {
-                q: weather.LOCATION,
+                q: "Sofia,BG",
                 units: 'metric',
                 lang: 'en',
-                appid: weather.API_KEY,
+                appid: import.meta.env.OPEN_WEATHER_API_KEY,
             },
         });
         console.log('Weather data from API:', response.data);
@@ -50,6 +49,7 @@ export const fetchWeather = async () => {
 
         return response.data;
     } catch (error) {
+
         console.error('Error fetching weather data:', error);
         throw error;
     }
