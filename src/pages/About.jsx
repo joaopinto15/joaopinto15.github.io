@@ -2,8 +2,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-
-import { CTA } from "../components";
+import { CTA, WeatherCard, CvCard } from "../components";
 import { experiences, skills } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
@@ -70,17 +69,15 @@ function RenderSkills({ type, shadow }) {
       </div>
     </>
   )
-
-
 }
 
 const About = ({ getDarkMode }) => {
-  const darkmodeColor = () => getDarkMode() ? 'rgb(15 23 42 / 0.95)' : 'rgb(255,255,255)';
+  const darkmodeColor = () => getDarkMode() ? 'rgb(30, 41, 59)' : 'rgb(255,255,255)';
   const shadow = () => getDarkMode() ? "btn-dark" : "btn-back";
 
   return (
-    <section className='max-container'>
-      <h1 className='head-text  text-black dark:text-white'>
+    <section className='max-container px-4 py-8'>
+      <h1 className='head-text text-black dark:text-white mb-4'>
         Hello, I'm{" "}
         <span className='blue-gradient_text font-semibold drop-shadow'>
           {" "}
@@ -89,22 +86,35 @@ const About = ({ getDarkMode }) => {
         👋
       </h1>
 
-      <div className='mt-5 flex flex-col gap-3 text-slate-500 dark:text-slate-100'>
+      <div className='mt-5 flex flex-col gap-3 text-slate-500 dark:text-slate-300'>
         <p>
           Software Engineer based in Portugal, currently studying at <a href="https://www.isep.ipp.pt/" target="_blank" className="text-blue-400" rel="noopener noreferrer"> <strong>ISEP</strong></a>.
         </p>
       </div>
 
+      <div className="relative flex flex-wrap justify-center items-center gap-8 mt-8">
+        {/* Radial Gradient Background using inline styles */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "radial-gradient(circle, black 10%, transparent 10%)",
+            backgroundSize: "30px 30px",
+            zIndex: "-1", // Ensure it stays behind the cards
+          }}
+        />
+        <CvCard />
+        <WeatherCard />
+      </div>
+
       <div className='py-10 flex flex-col'>
-        <h3 className='subhead-text text-black dark:text-white'>Used Technologies</h3>
+        <h3 className='subhead-text text-black dark:text-white mb-4'>Used Technologies</h3>
         <RenderSkills type="FrontEnd" shadow={shadow} />
         <RenderSkills type="BackEnd" shadow={shadow} />
-
       </div>
 
       <div className='py-16'>
-        <h3 className='subhead-text text-black dark:text-white'>Work Experience</h3>
-        <div className='mt-5 flex flex-col gap-3 text-slate-500 dark:text-slate-100'>
+        <h3 className='subhead-text text-black dark:text-white mb-4'>Work Experience</h3>
+        <div className='mt-5 flex flex-col gap-3 text-slate-500 dark:text-slate-300'>
           <p>
             I am currently a university student, which has limited my ability to
             gain extensive work experience so far. However, my academic journey has
@@ -167,11 +177,11 @@ const About = ({ getDarkMode }) => {
         </div>
       </div>
 
-      <hr className='border-slate-200 dark:border-slate-700' />
+      <hr className='border-slate-200 dark:border-slate-600 my-8' />
 
       <CTA />
-    </section >
-  );
+    </section>
+  )
 };
 
 export default About;

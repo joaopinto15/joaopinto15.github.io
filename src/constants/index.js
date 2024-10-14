@@ -1,10 +1,4 @@
-import {
-    estate,
-    pricewise,
-    snapgram,
-    summiz,
-    threads,
-} from "../assets/icons";
+import { WiDaySunny, WiNightClear, WiCloud, WiCloudy, WiShowers, WiRain, WiThunderstorm, WiSnow, WiFog } from 'react-icons/wi';
 
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
@@ -67,6 +61,12 @@ export const skills = [
         type: "BackEnd",
         url: "https://www.python.org/",
     },
+    {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+        name: "Postman",
+        type: "BackEnd",
+        url: "https://www.postman.com/",
+    }
 
 
 ];
@@ -186,4 +186,31 @@ export const playerAnimations = {
     pointing: "Pointing",
     pointingUp: "Pointing Up",
     dance: "Dance",
+};
+
+export const weather = {
+    LOCATION: "Sofia,BG",
+    API_KEY: import.meta.env.API_KEY,
+    BASE_URL: "https://api.openweathermap.org/data/2.5/forecast",
+}
+
+export const weatherIcons = {
+    "01d": WiDaySunny,
+    "01n": WiNightClear,
+    "02d": WiCloud,
+    "02n": WiCloud,
+    "03d": WiCloudy,
+    "03n": WiCloudy,
+    "04d": WiCloudy,
+    "04n": WiCloudy,
+    "09d": WiShowers,
+    "09n": WiShowers,
+    "10d": WiRain,
+    "10n": WiRain,
+    "11d": WiThunderstorm,
+    "11n": WiThunderstorm,
+    "13d": WiSnow,
+    "13n": WiSnow,
+    "50d": WiFog,
+    "50n": WiFog,
 };

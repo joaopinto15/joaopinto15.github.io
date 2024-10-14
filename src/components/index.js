@@ -7,6 +7,8 @@ import DarkModeButton from "./DarkModeButton";
 import Game from "./Game";
 import Overlay from "./Overlay";
 import ProjectCard from "./ProjectCard";
+import WeatherCard from "./WeatherCard";
+import CvCard from "./CvCard";
 export {
     CTA,
     Alert,
@@ -16,5 +18,7 @@ export {
     DarkModeButton,
     Game,
     ProjectCard,
+    WeatherCard,
+    CvCard,
     Overlay,
 }
