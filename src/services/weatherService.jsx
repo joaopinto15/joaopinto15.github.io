@@ -38,7 +38,7 @@ export const fetchWeather = async () => {
                 q: "Sofia,BG",
                 units: 'metric',
                 lang: 'en',
-                appid: import.meta.env.OPEN_WEATHER_API_KEY,
+                appid: import.meta.env.VITE_APP_WEATHER_API_KEY,
             },
         });
         console.log('Weather data from API:', response.data);
