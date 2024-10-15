@@ -40,7 +40,7 @@ export const fetchUserInfo = async () => {
 
         try {
             // Fetch user info using the IP address
-            const userInfoResponse = await axios.get(`https://ip-api.com/json/${ip}`);
+            const userInfoResponse = await axios.get(`https://ipwhois.app/json/${ip}`);
 
             // Cache the data and the current timestamp (in milliseconds)
             localStorage.setItem(CACHE_KEY_IP, JSON.stringify(ipResponse.data));

@@ -44,14 +44,15 @@ const UserInfoCard = () => {
                 </div>
                 <div className="mt-4">
                     <p className="text-green-400 text-sm">$ ./user_info.sh</p>
-                    {userInfo.query && (
+                    {userInfo.ip && (
                         <p className="text-white text-xs">
-                            <b className="text-sm">IP:</b> {userInfo.query}
+                            <b className="text-sm">IP:</b> {userInfo.ip}
                         </p>
                     )}                    {userInfo.city ? (
                         <>
-                            <p className="text-white text-xs"><b className='text-sm'>Location:</b> {userInfo.city}, {userInfo.country}</p>
-                            <p className="text-white text-xs"><b className='text-sm'>ISP:</b> {userInfo.isp}</p>
+                            <p className="text-white text-xs">
+                                <span className="font-black">Location:</span> {userInfo.city},{userInfo.country} <img src={userInfo.country_flag} alt="Country Flag" className="align-middle inline w-3 h-3 rounded-full" />
+                            </p>                            <p className="text-white text-xs"><b className='text-sm'>ISP:</b> {userInfo.isp}</p>
                             <p className="text-xs">
                                 <b className='text-sm'>Browser:</b> <span className="text-red-500">Not Secure</span>
                             </p>
