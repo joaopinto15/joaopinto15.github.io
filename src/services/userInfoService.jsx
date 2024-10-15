@@ -40,7 +40,7 @@ export const fetchUserInfo = async () => {
 
         try {
             // Fetch user info using the IP address
-            const userInfoResponse = await axios.get(`https://ipinfo.io/${ip}/geo`);
+            const userInfoResponse = await axios.get(`http://ip-api.com/json/${ip}`);
 
             // Cache the data and the current timestamp (in milliseconds)
             localStorage.setItem(CACHE_KEY_IP, JSON.stringify(ipResponse.data));
@@ -49,11 +49,9 @@ export const fetchUserInfo = async () => {
 
             return userInfoResponse.data;
         } catch (error) {
-            console.log('Error fetching user info data:', error);
             return { ip };
         }
     } catch (error) {
-        console.error('Error fetching IP data:', error);
-        throw error;
+        return;
     }
 };

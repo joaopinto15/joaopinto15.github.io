@@ -43,12 +43,15 @@ const UserInfoCard = () => {
                     <p className="text-xs">bash</p>
                 </div>
                 <div className="mt-4">
-                    <p className="text-green-400 text-sm">$ user info</p>
-                    <p className="text-white text-xs"><b className='text-sm'>IP:</b> {userInfo.ip}</p>
-                    {userInfo.loc ? (
+                    <p className="text-green-400 text-sm">$ ./user_info.sh</p>
+                    {userInfo.query && (
+                        <p className="text-white text-xs">
+                            <b className="text-sm">IP:</b> {userInfo.query}
+                        </p>
+                    )}                    {userInfo.city ? (
                         <>
                             <p className="text-white text-xs"><b className='text-sm'>Location:</b> {userInfo.city}, {userInfo.country}</p>
-                            <p className="text-white text-xs"><b className='text-sm'>ISP:</b> {userInfo.org}</p>
+                            <p className="text-white text-xs"><b className='text-sm'>ISP:</b> {userInfo.isp}</p>
                             <p className="text-xs">
                                 <b className='text-sm'>Browser:</b> <span className="text-red-500">Not Secure</span>
                             </p>
