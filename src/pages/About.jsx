@@ -2,9 +2,8 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { CTA, WeatherCard, CvCard } from "../components";
+import { CTA, WeatherCard, CvCard, UserInfoCard } from "../components";
 import { experiences, skills } from "../constants";
-
 import "react-vertical-timeline-component/style.min.css";
 import { Link } from "react-router-dom";
 
@@ -104,6 +103,7 @@ const About = ({ getDarkMode }) => {
         />
         <CvCard />
         <WeatherCard />
+        <UserInfoCard />
       </div>
 
       <div className='py-10 flex flex-col'>

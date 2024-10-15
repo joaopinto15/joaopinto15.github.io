@@ -9,6 +9,7 @@ import Overlay from "./Overlay";
 import ProjectCard from "./ProjectCard";
 import WeatherCard from "./WeatherCard";
 import CvCard from "./CvCard";
+import UserInfoCard from "./UserInfoCard";
 export {
     CTA,
     Alert,
@@ -20,5 +21,6 @@ export {
     ProjectCard,
     WeatherCard,
     CvCard,
+    UserInfoCard,
     Overlay,
 }

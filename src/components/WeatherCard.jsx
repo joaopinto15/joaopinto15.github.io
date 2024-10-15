@@ -10,6 +10,7 @@ const WeatherCard = () => {
     const [isNight, setIsNight] = useState(false);
     const [maxTemp, setMaxTemp] = useState(null);
     const [minTemp, setMinTemp] = useState(null);
+    const [closestEntry, setClosestEntry] = useState(null);
     const [temp, setTemp] = useState(null);
     const [daysOfWeek, setDaysOfWeek] = useState([]);
 
@@ -19,23 +20,22 @@ const WeatherCard = () => {
                 const data = await fetchWeather();
                 setWeatherData(data);
 
-                // Calculate the current hour in the format used by the API
-                const now = new Date();
-                const currentHour = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate()} ${now.getHours().toString().padStart(2, '0')}:00:00`;
+                // Extract timezone offset from OpenWeather data (in seconds)
+                const timezoneOffset = data.city.timezone; // timezone offset in seconds
 
-                // Filter out the hourly forecast for today
-                const todayEntries = data.list.filter(entry => entry.dt_txt.startsWith(currentHour.split(' ')[0]));
+                // Get the current time in the city's timezone
+                const nowUTC = new Date(); // Current UTC time
+                const localTime = new Date(nowUTC.getTime() + timezoneOffset * 1000); // Adjust for city's local time
 
-                // Find the closest hourly entry
-                const closestEntry = todayEntries.reduce((prev, curr) => {
-                    return Math.abs(new Date(curr.dt_txt) - now) < Math.abs(new Date(prev.dt_txt) - now) ? curr : prev;
-                });
+                // Find the closest forecast entry by comparing timestamps
+                const closestEntry = findClosestForecast(data.list, localTime);
+                setClosestEntry(closestEntry);
 
-                // Set temperature and other relevant data
+                // Set weather data (icon, temperature, etc.)
                 const icon = closestEntry.weather[0].icon;
-                const temps = todayEntries.map(entry => entry.main.temp);
-                const maxTemp = Math.round(Math.max(...temps) + 4);
-                const minTemp = Math.round(Math.min(...temps) - 4);
+                const temps = data.list.map(entry => entry.main.temp);
+                const maxTemp = Math.round(Math.max(...temps) + 4); // Adjusted for UI
+                const minTemp = Math.round(Math.min(...temps) - 4); // Adjusted for UI
 
                 setMaxTemp(maxTemp);
                 setMinTemp(minTemp);
@@ -43,7 +43,9 @@ const WeatherCard = () => {
                 setIsNight(icon.includes('n'));
                 setWeatherIcon(weatherIcons[icon]);
 
-                setDaysOfWeek(getDaysOfWeek());
+                // Set days of the week
+                setDaysOfWeek(getDaysOfWeek(localTime));
+
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching weather data:", error);
@@ -55,10 +57,43 @@ const WeatherCard = () => {
         getWeatherData();
     }, []);
 
+    // Helper function to find the closest forecast entry
+    const findClosestForecast = (forecastList, localTime) => {
+        let closest = null;
+        let closestDiff = Infinity;
+
+        forecastList.forEach((entry) => {
+            const entryTime = new Date(entry.dt * 1000);
+            const diff = entryTime - localTime; // difference between entry and local time
+
+            // If the entry is in the future or exactly at the current time
+            if (diff >= 0 && diff < closestDiff) {
+                closest = entry;
+                closestDiff = diff;
+            }
+        });
+
+        // If no future forecast was found, fallback to the last past forecast
+        if (!closest) {
+            forecastList.forEach((entry) => {
+                const entryTime = new Date(entry.dt * 1000);
+                const diff = localTime - entryTime; // how long ago it was in the past
+
+                if (diff >= 0 && diff < closestDiff) {
+                    closest = entry;
+                    closestDiff = diff;
+                }
+            });
+        }
+
+        return closest;
+    };
+
+
     // Helper function to get the day names for today and the next three days
-    const getDaysOfWeek = () => {
+    const getDaysOfWeek = (currentDate) => {
         const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-        const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, etc.
+        const today = currentDate.getDay(); // 0 for Sunday, 1 for Monday, etc.
         const nextDays = [];
 
         for (let i = 0; i < 4; i++) {
@@ -69,11 +104,11 @@ const WeatherCard = () => {
     };
 
     if (loading) {
-        return <div className="flex justify-center items-center h-44 w-72">Loading...</div>;
+        return <div className="flex justify-center text-black dark:text-white items-center h-44 w-72">Loading...</div>;
     }
 
     if (error) {
-        return <div className="flex justify-center items-center h-44 w-72">Error: {error}</div>;
+        return <div className="flex justify-center text-black dark:text-white items-center h-44 w-72">Error: {error}</div>;
     }
 
     return (
@@ -90,23 +125,23 @@ const WeatherCard = () => {
                         <div className="w-16 h-16">
                             {weatherIcon && React.cloneElement(weatherIcon, { className: "w-full h-full" })}
                         </div>
-                        <div className="text-sm">{weatherData.list[0].weather[0].description}</div>
+                        <div className="text-sm">{closestEntry.weather[0].description}</div>
                     </div>
                     <div className="text-5xl font-medium">{temp}°</div>
                     <div className="text-lg">{maxTemp}°/{minTemp}°</div>
                 </div>
                 {/* Date and location */}
                 <div className="flex flex-col items-end justify-start h-full z-10 pr-4 mt-7">
-                    <div className="flex flex-col items-end"> {/* Removed mb-1 */}
+                    <div className="flex flex-col items-end">
                         <div className="text-xl">
-                            {new Date(weatherData.list[0].dt * 1000).toLocaleTimeString('en-US', {
+                            {new Date(closestEntry.dt * 1000).toLocaleTimeString('en-US', {
                                 hour: 'numeric',
                                 minute: 'numeric',
                                 hour12: true
                             })}
                         </div>
                         <div className="text-sm">
-                            {new Date(weatherData.list[0].dt * 1000).toLocaleDateString()}
+                            {new Date(closestEntry.dt * 1000).toLocaleDateString()}
                         </div>
                     </div>
                     <div className="text-lg">{weatherData.city.name}</div>
@@ -118,7 +153,7 @@ const WeatherCard = () => {
                 {daysOfWeek.map((day, idx) => (
                     <button
                         key={idx}
-                        className={`flex items-center justify-center h-full w-full ${isNight ? 'bg-indigo-800' : 'bg-[#a75265]'} shadow-inner transition ease-in-out duration-100 hover:scale-90  border ${isNight ? 'border-indigo-900 hover:border-indigo-600' : 'border-[#8a3e4e] hover:border-[#7a3544]'} hover:shadow-lg`}
+                        className={`flex items-center justify-center h-full w-full ${isNight ? 'bg-indigo-800' : 'bg-[#a75265]'} shadow-inner transition ease-in-out duration-100 hover:scale-90 hover:rounded-md border ${isNight ? 'border-indigo-900 hover:border-indigo-600' : 'border-[#8a3e4e] hover:border-[#7a3544]'} hover:shadow-lg`}
                     >
                         <span className="text-sm font-medium text-white opacity-70">{day}</span>
                         <span className="w-5 h-full ml-1"> {/* Adjusted margin-left */}
@@ -137,6 +172,7 @@ const WeatherCard = () => {
                     </button>
                 ))}
             </section>
+
         </div>
     );
 };
