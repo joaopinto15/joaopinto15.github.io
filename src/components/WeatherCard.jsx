@@ -104,15 +104,27 @@ const WeatherCard = () => {
     };
 
     if (loading) {
-        return <div className="flex justify-center text-black dark:text-white items-center h-44 w-72">Loading...</div>;
+        return (
+            <div className="flex flex-col items-center h-44 w-72 rounded-3xl border-4 border-neutral-500 dark:border-gray-300 overflow-hidden shadow-md">
+                <aside className="bg-indigo-900 text-white p-4 rounded-lg w-full h-full font-mono">
+                    <div className="flex justify-center items-center h-full">
+                        <p className="text-xs">
+                            Loading
+                            <span className="animate-pulse">.</span>
+                            <span className="animate-pulse delay-200">.</span>
+                            <span className="animate-pulse delay-400">.</span>
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        );
     }
 
-    if (error) {
-        return <div className="flex justify-center text-black dark:text-white items-center h-44 w-72">Error: {error}</div>;
-    }
+    if (error) return;
+
 
     return (
-        <div className={`flex flex-col items-center h-44 w-72 rounded-3xl border ${isNight ? 'border-sky-900' : 'border-red-400'} border-4 ${isNight ? 'bg-gray-800' : 'bg-gray-300'} overflow-hidden shadow-md transition ease-in-out duration-100 group`}>
+        <div className={`flex flex-col items-center h-44 w-72 rounded-3xl  border-neutral-500 dark:border-gray-300 border-4 ${isNight ? 'bg-gray-800' : 'bg-gray-300'} overflow-hidden shadow-md transition ease-in-out duration-100 group`}>
             <section className="relative flex items-center justify-between w-full h-3/ text-white overflow-hidden">
                 <div className={`absolute h-full w-full ${isNight ? 'bg-indigo-900' : 'bg-[#ec7263]'} overflow-hidden`}>
                     <div className={`absolute top-[-80%] right-[-50%] w-72 h-72 opacity-40 ${isNight ? 'bg-blue-700' : 'bg-[#efc745]'} rounded-full transition-transform duration-500 group-hover:scale-125`}></div>

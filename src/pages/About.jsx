@@ -8,21 +8,18 @@ import "react-vertical-timeline-component/style.min.css";
 import { Link } from "react-router-dom";
 
 function renderPoint(point) {
-  // [example](https://www.example.com)
   const markdownLinkRegex = /\[([^\]]+)\]\((http[s]?:\/\/[^\)]+)\)/g;
   const segments = [];
   let lastIndex = 0;
 
   point.replace(markdownLinkRegex, (match, linkText, linkHref, index) => {
-    // Add the text before the link
     if (index > lastIndex) {
       segments.push(point.substring(lastIndex, index));
     }
 
-    // Add the <a> tag for the link with a unique key
     segments.push(
       <a
-        key={index} // Unique key based on the current index
+        key={index}
         href={linkHref}
         className="text-blue-500"
         target="_blank"
@@ -92,13 +89,12 @@ const About = ({ getDarkMode }) => {
       </div>
 
       <div className="relative flex flex-wrap justify-center items-center gap-8 mt-8">
-        {/* Radial Gradient Background using inline styles */}
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: "radial-gradient(circle, black 10%, transparent 10%)",
             backgroundSize: "30px 30px",
-            zIndex: "-1", // Ensure it stays behind the cards
+            zIndex: "-1",
           }}
         />
         <CvCard />
@@ -124,12 +120,12 @@ const About = ({ getDarkMode }) => {
         </div>
 
         <div className='mt-12 flex'>
-          <VerticalTimeline lineColor={darkmodeColor()}>
+          <VerticalTimeline lineColor={getDarkMode() ? "#2b2b2b" : "#d0d4d4"}>
             {experiences.map((experience) => (
               <VerticalTimelineElement
                 key={experience.company_name}
                 date={experience.date}
-                dateClassName="text-black dark:text-white"
+                dateClassName={getDarkMode() ? "text-white" : "text-black"}
                 iconStyle={{ background: experience.iconBg }}
                 iconOnClick={() => window.open(experience.url, "_blank")}
                 icon={
@@ -146,15 +142,15 @@ const About = ({ getDarkMode }) => {
                   borderStyle: "solid",
                   borderBottomColor: experience.iconBg,
                   boxShadow: "none",
-                  background: darkmodeColor(),
+                  background: getDarkMode() ? "#1e1e1e" : "#ffffff",
                 }}
               >
                 <div>
-                  <h3 className='text-black dark:text-white text-xl font-poppins font-semibold'>
+                  <h3 className={getDarkMode() ? 'text-white text-xl font-poppins font-semibold' : 'text-black text-xl font-poppins font-semibold'}>
                     {experience.title}
                   </h3>
                   <p
-                    className='text-black-500 dark:text-gray-400 font-medium text-base'
+                    className={getDarkMode() ? 'text-gray-400 font-medium text-base' : 'text-gray-700 font-medium text-base'}
                     style={{ margin: 0 }}
                   >
                     {experience.company_name}
@@ -165,12 +161,13 @@ const About = ({ getDarkMode }) => {
                   {experience.points.map((point, index) => (
                     <li
                       key={`experience-point-${index}`}
-                      className='text-black-500/50 dark:text-gray-400/50 darkfont-normal pl-1 text-sm'
+                      className={getDarkMode() ? 'text-gray-200 dark:text-gray-300 font-normal pl-1 text-sm' : 'text-gray-600 font-normal pl-1 text-sm'}
                     >
                       {renderPoint(point)}
                     </li>
                   ))}
                 </ul>
+
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>

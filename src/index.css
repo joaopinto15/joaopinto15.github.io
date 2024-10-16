@@ -12,8 +12,7 @@
 body {
   font-family: "Work Sans", sans-serif;
   overflow: auto;
-  @apply bg-white dark:bg-gray-900;
-
+  @apply bg-[#E0E4E4] dark:bg-[#121212];
 }
 
 body:has(.card[data-color="blue"]:hover) {
@@ -33,11 +32,8 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-
-body:hover::-webkit-scrollbar-thumb {
-  @apply bg-customGray dark:bg-customGrayDark;
+  @apply bg-[#888] dark:bg-[#555];
+  /* Default color for the scrollbar thumb */
 }
 
 @layer utilities {
