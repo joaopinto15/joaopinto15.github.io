@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className='footer font-poppins'>
-      <hr className='border-slate-200 dark:border-slate-700' />
+      <hr className='border-slate-300 dark:border-slate-700' />
 
       <div className='footer-container no-select text-black dark:text-white'>
         <p>

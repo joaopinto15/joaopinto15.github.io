@@ -25,7 +25,6 @@ const Projects = ({ getDarkMode }) => {
         ))}
       </div>
 
-      <hr className='border-slate-200 dark:border-slate-700' />
       <CTA />
     </section>
   );

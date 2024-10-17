@@ -80,33 +80,33 @@ const UserInfoCard = () => {
                     <p className="text-green-400 text-sm mb-2">$ ./user_info.sh</p>
                     {userInfo.ip && (
                         <p className="text-white text-xs">
-                            <b className="text-sm">IP:</b> {userInfo.ip}
+                            <b>IP:</b> {userInfo.ip}
                         </p>
                     )}
                     {userInfo.city ? (
                         <>
-                            <p className="text-white text-xs flex items-center ">
-                                <b >Location:&nbsp;</b> {userInfo.city}, {userInfo.country}
+                            <p className="text-white text-xs flex items-center whitespace-nowrap overflow-hidden text-ellipsis">
+                                <b>Location:&nbsp;</b> {userInfo.region}, {userInfo.country}
                                 <img
                                     src={userInfo.country_flag}
                                     alt={`${userInfo.country} flag`}
-                                    className="ml-2 w-3 h-3 rounded-sm"
+                                    className="w-3 h-3 rounded-sm ml-1"
                                 />
                             </p>
                             <p className="text-white text-xs">
-                                <b className="text-sm">ISP:</b> {userInfo.isp}
+                                <b>ISP:</b> {userInfo.isp}
                             </p>
                             <p className="text-white text-xs flex items-center">
-                                <b className="text-sm">OS:&nbsp;</b> {os.name} {os.icon}
+                                <b>OS:&nbsp;</b> {os.name} {os.icon}
                             </p>
                         </>
                     ) : (
                         <>
                             <p className="text-xs">
-                                <b className="text-sm">Info:</b> No data found
+                                <b>Info:</b> No data found
                             </p>
                             <p className="text-xs">
-                                <b className="text-sm">Browser:</b> <span className="text-green-500">Secure</span>
+                                <b>Browser:</b> <span className="text-green-500">Secure</span>
                             </p>
                         </>
                     )}

@@ -174,7 +174,6 @@ const About = ({ getDarkMode }) => {
         </div>
       </div>
 
-      <hr className='border-slate-200 dark:border-slate-600 my-8' />
 
       <CTA />
     </section>
