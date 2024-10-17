@@ -106,6 +106,7 @@ const About = ({ getDarkMode }) => {
         <h3 className='subhead-text text-black dark:text-white mb-4'>Used Technologies</h3>
         <RenderSkills type="FrontEnd" shadow={shadow} />
         <RenderSkills type="BackEnd" shadow={shadow} />
+        <RenderSkills type="Tools" shadow={shadow} />
       </div>
 
       <div className='py-16'>

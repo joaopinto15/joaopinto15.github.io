@@ -8,12 +8,6 @@ import { SiCredly } from "react-icons/si";
 
 export const skills = [
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
-        name: "Rust",
-        type: "BackEnd",
-        url: "https://www.rust-lang.org/",
-    },
-    {
         imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
         name: "Java",
         type: "BackEnd",
@@ -38,22 +32,22 @@ export const skills = [
         url: "https://reactjs.org/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg",
-        name: "deno.js",
-        type: "BackEnd",
-        url: "https://deno.com/",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg",
+        name: "Angular",
+        type: "FrontEnd",
+        url: "https://angular.io/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
+        name: "Rust",
+        type: "BackEnd",
+        url: "https://www.rust-lang.org/",
+    },
+    {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg",
         name: "SQL",
         type: "BackEnd",
-        url: "https://www.mysql.com/",
-    },
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg",
-        name: "Three.js",
-        type: "FrontEnd",
-        url: "https://threejs.org/",
+        url: "https://www.oracle.com/database/",
     },
     {
         imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
@@ -62,17 +56,47 @@ export const skills = [
         url: "https://www.python.org/",
     },
     {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
+        name: "Nodejs",
+        type: "BackEnd",
+        url: "https://nodejs.org/en/",
+    },
+    {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg",
+        name: "deno.js",
+        type: "Backend",
+        url: "https://deno.com/",
+    },
+    {
         imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
         name: "Postman",
-        type: "BackEnd",
+        type: "Tools",
         url: "https://www.postman.com/",
-    }
+    },
+    {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+        name: "Docker",
+        type: "Tools",
+        url: "https://www.docker.com/",
+    },
+    {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
+        name: "Linux",
+        type: "Tools",
+        url: "https://www.linux.org/",
+    },
+    {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+        name: "Visual Studio",
+        type: "Tools",
+        url: "https://code.visualstudio.com/",
 
+    }
 
 ];
 /**
  *  colors to use : #fbc3bc, #accbe1, #b7e4c7, #a2d2ff
- */
+*/
 export const experiences = [
     {
         title: "Federated Sports",
@@ -148,17 +172,24 @@ export const projects = [
         iconUrl: 'https://avatars.githubusercontent.com/u/182362816?s=200&v=4',
         theme: 'btn-back-pink',
         name: 'PureNimble Website',
-        description: 'Official website of PureNimble organization',
+        description: 'Official website of PureNimble organization, where you can find information about the team, projects, and contact information.',
         link: 'https://github.com/PureNimble',
         website: 'https://purenimble.github.io/',
     },
     {
-        iconUrl: 'https://avatars.githubusercontent.com/u/182362816?s=200&v=4',
+        iconUrl: 'https://raw.githubusercontent.com/PureNimble/PureNimble.github.io/refs/heads/main/src/assets/HairDrop-Logo-DarkMode.svg',
         theme: 'btn-back-pink',
         name: 'HairDrop',
         description: 'This project is a service designed to seamlessly connect users with hair salons, barbershops, and independent hairstylists, offering a modern, on-demand solution for hair care.',
         link: 'https://github.com/PureNimble/hairdrop',
         website: 'https://hairdrop.me',
+    },
+    {
+        iconUrl: 'https://raw.githubusercontent.com/PureNimble/PureNimble.github.io/refs/heads/main/src/assets/Jobs4u-Logo-LightMode.svg',
+        theme: 'btn-back-pink',
+        name: 'Jobs4u',
+        description: 'Major Project for the Software Engineering course at ISEP. Jobs4u is a platform that connects job seekers with employers, providing a simple and efficient way to find and post job opportunities.',
+        link: 'https://github.com/PureNimble/ISEP-LAPR4',
     }
 ];
 
