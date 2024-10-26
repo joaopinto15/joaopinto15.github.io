@@ -19,7 +19,7 @@ const App = () => {
   }, [darkMode]);
 
   return (
-    <main className='bg-[#E0E4E4] dark:bg-[#121212] '>
+    <main className='bg-white dark:bg-[#121212] '>
       <Router>
         <Navbar toggleDarkMode={toggleDarkMode} />
         <Routes>

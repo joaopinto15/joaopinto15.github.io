@@ -68,7 +68,6 @@ function RenderSkills({ type, shadow }) {
 }
 
 const About = ({ getDarkMode }) => {
-  const darkmodeColor = () => getDarkMode() ? 'rgb(30, 41, 59)' : 'rgb(255,255,255)';
   const shadow = () => getDarkMode() ? "btn-dark" : "btn-back";
 
   return (
@@ -121,7 +120,7 @@ const About = ({ getDarkMode }) => {
         </div>
 
         <div className='mt-12 flex'>
-          <VerticalTimeline lineColor={getDarkMode() ? "#2b2b2b" : "#d0d4d4"}>
+          <VerticalTimeline lineColor={getDarkMode() ? "#2b2b2b" : "#E1E6EA"}>
             {experiences.map((experience) => (
               <VerticalTimelineElement
                 key={experience.company_name}
@@ -143,7 +142,7 @@ const About = ({ getDarkMode }) => {
                   borderStyle: "solid",
                   borderBottomColor: experience.iconBg,
                   boxShadow: "none",
-                  background: getDarkMode() ? "#1e1e1e" : "#ffffff",
+                  background: getDarkMode() ? "#1e1e1e" : "#F0F0F0",
                 }}
               >
                 <div>
