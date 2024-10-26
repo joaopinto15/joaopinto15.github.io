@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import { useMemo, Suspense } from 'react';
-import { Game, Loader, Overlay } from '../components';
+import { Game, Loader, WelcomeCard, Overlay } from '../components';
 import { KeyboardControls } from '@react-three/drei';
 import { Leva } from 'leva';
 
@@ -11,6 +11,7 @@ export const Controls = {
   right: 'right',
   jump: 'jump',
   run: 'run',
+  dance: 'dance',
 };
 
 const Home = () => {

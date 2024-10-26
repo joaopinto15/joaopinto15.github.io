@@ -86,11 +86,9 @@ export const PlayerController = () => {
     }, []);
 
 
-
-
-
     useFrame(({ camera, mouse }) => {
         if (rb.current) {
+            // Get the current velocity
             const vel = rb.current.linvel();
 
             const movement = {
@@ -98,6 +96,7 @@ export const PlayerController = () => {
                 z: 0,
             };
 
+            // Movement Controls (keyboard)
             if (get().forward) {
                 movement.z = 1;
             }
@@ -105,9 +104,9 @@ export const PlayerController = () => {
                 movement.z = -1;
             }
 
-
             let speed = get().run ? RUN_SPEED : WALK_SPEED;
 
+            // Mouse-based movement (for touch/click)
             if (isClicking.current) {
                 if (Math.abs(mouse.x) > 0.1) {
                     movement.x = -mouse.x;
@@ -118,6 +117,7 @@ export const PlayerController = () => {
                 }
             }
 
+            // Arrow key controls (keyboard)
             if (get().left) {
                 movement.x = 1;
             }
@@ -125,40 +125,43 @@ export const PlayerController = () => {
                 movement.x = -1;
             }
 
-            if (movement.x !== 0) {
-                rotationTarget.current += ROTATION_SPEED * movement.x;
-            }
-
             if (movement.x !== 0 || movement.z !== 0) {
+                // Player is moving
                 playerRotationTarget.current = Math.atan2(movement.x, movement.z);
-                vel.x =
-                    Math.sin(rotationTarget.current + playerRotationTarget.current) *
-                    speed;
-                vel.z =
-                    Math.cos(rotationTarget.current + playerRotationTarget.current) *
-                    speed;
+                vel.x = Math.sin(rotationTarget.current + playerRotationTarget.current) * speed;
+                vel.z = Math.cos(rotationTarget.current + playerRotationTarget.current) * speed;
+
+                // Set animation based on speed
                 if (speed === RUN_SPEED) {
                     setAnimation(playerAnimations.run);
                 } else {
                     setAnimation(playerAnimations.walk);
                 }
             } else {
-                setAnimation(playerAnimations.idle);
-                if (get().dance) {
-                    setAnimation(playerAnimations.dance);
-                }
+                // Player stopped moving, zero out the velocity to prevent sliding
+                vel.x = 0;
+                vel.z = 0;
 
+                // Set idle or dance animation
+                if (get().dance) {
+                    setAnimation(playerAnimations.dance);  // Trigger dance animation
+                } else {
+                    setAnimation(playerAnimations.idle);
+                }
             }
+
+            // Apply updated velocity to the player
+            rb.current.setLinvel(vel, true);
+
+            // Smooth rotation towards target
             player.current.rotation.y = lerpAngle(
                 player.current.rotation.y,
                 playerRotationTarget.current,
                 0.1
             );
-
-            rb.current.setLinvel(vel, true);
         }
 
-        // CAMERA
+        // CAMERA Controls (unchanged)
         container.current.rotation.y = MathUtils.lerp(
             container.current.rotation.y,
             rotationTarget.current,
@@ -171,10 +174,10 @@ export const PlayerController = () => {
         if (cameraTarget.current) {
             cameraTarget.current.getWorldPosition(cameraLookAtWorldPosition.current);
             cameraLookAt.current.lerp(cameraLookAtWorldPosition.current, 0.1);
-
             camera.lookAt(cameraLookAt.current);
         }
     });
+
 
 
     return (

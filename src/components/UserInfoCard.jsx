@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchUserInfo } from '../services/userInfoService';
 import { FaApple, FaWindows, FaMobileAlt } from 'react-icons/fa';
 import { FcLinux } from 'react-icons/fc';
+
 // Helper function to detect OS and return corresponding icon
 const getOS = () => {
     const userAgent = window.navigator.userAgent;
@@ -50,7 +51,7 @@ const UserInfoCard = () => {
     if (loading) {
         return (
             <div className="flex flex-col items-center h-44 w-72 rounded-3xl border-4 border-neutral-500 dark:border-gray-300 overflow-hidden shadow-md">
-                <aside className="bg-black text-white p-4 rounded-lg w-full h-full font-mono">
+                <aside className="bg-white dark:bg-gray-800 text-black dark:text-white p-4 rounded-lg w-full h-full font-mono">
                     <div className="flex justify-center items-center h-full">
                         <p className="typing text-xs">Loading...</p>
                     </div>
@@ -67,25 +68,25 @@ const UserInfoCard = () => {
 
     return (
         <div className="flex flex-col items-center h-44 w-72 rounded-3xl border-4 border-neutral-500 dark:border-gray-300 overflow-hidden shadow-md">
-            <aside className="bg-black text-white p-4 rounded-lg w-full h-full font-mono">
+            <aside className="bg-white dark:bg-gray-800 text-black dark:text-white p-4 rounded-lg w-full h-full font-mono">
                 <div className="flex justify-between items-center">
                     <div className="flex space-x-2 text-red-500">
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <p className="text-xs">bash</p>
+                    <p className="text-xs">zsh</p>
                 </div>
                 <div className="mt-4">
-                    <p className="text-green-400 text-sm mb-2">$ ./user_info.sh</p>
+                    <p className="text-green-500 dark:text-green-400 text-sm mb-2">$ ./user_info.sh</p>
                     {userInfo.ip && (
-                        <p className="text-white text-xs">
+                        <p className="text-xs">
                             <b>IP:</b> {userInfo.ip}
                         </p>
                     )}
                     {userInfo.city ? (
                         <>
-                            <p className="text-white text-xs flex items-center whitespace-nowrap overflow-hidden text-ellipsis">
+                            <p className="text-xs flex items-center whitespace-nowrap overflow-hidden text-ellipsis">
                                 <b>Location:&nbsp;</b> {userInfo.region}, {userInfo.country}
                                 <img
                                     src={userInfo.country_flag}
@@ -93,10 +94,10 @@ const UserInfoCard = () => {
                                     className="w-3 h-3 rounded-sm ml-1"
                                 />
                             </p>
-                            <p className="text-white text-xs">
+                            <p className="text-xs">
                                 <b>ISP:</b> {userInfo.isp}
                             </p>
-                            <p className="text-white text-xs flex items-center">
+                            <p className="text-xs flex items-center">
                                 <b>OS:&nbsp;</b> {os.name} {os.icon}
                             </p>
                         </>

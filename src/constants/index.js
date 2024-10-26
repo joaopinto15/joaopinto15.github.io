@@ -38,7 +38,7 @@ export const skills = [
         url: "https://angular.io/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
+        imageUrl: "https://www.svgrepo.com/show/374056/rust.svg",
         name: "Rust",
         type: "BackEnd",
         url: "https://www.rust-lang.org/",
@@ -62,9 +62,15 @@ export const skills = [
         url: "https://nodejs.org/en/",
     },
     {
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+        name: "aws",
+        type: "Tools",
+        url: "https://aws.amazon.com/",
+    },
+    {
         imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg",
         name: "deno.js",
-        type: "Backend",
+        type: "BackEnd",
         url: "https://deno.com/",
     },
     {
@@ -91,7 +97,7 @@ export const skills = [
         type: "Tools",
         url: "https://code.visualstudio.com/",
 
-    }
+    },
 
 ];
 /**
@@ -238,3 +244,12 @@ export const weatherIcons = {
     "50d": WiFog,
     "50n": WiFog,
 };
+
+export const overlayCards = [
+
+    {
+        image: "https://github.com/joaopinto15.png",
+        title: "Welcome to my web portfolio!",
+        description: "Explore my work and don't miss the 3D animation section for an immersive experience. Enjoy!",
+    },
+];

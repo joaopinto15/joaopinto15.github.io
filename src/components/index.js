@@ -5,11 +5,12 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import DarkModeButton from "./DarkModeButton";
 import Game from "./Game";
-import Overlay from "./Overlay";
 import ProjectCard from "./ProjectCard";
 import WeatherCard from "./WeatherCard";
 import CvCard from "./CvCard";
 import UserInfoCard from "./UserInfoCard";
+import WelcomeCard from "./WelcomeCard";
+import Overlay from "./Overlay";
 export {
     CTA,
     Alert,
@@ -22,5 +23,6 @@ export {
     WeatherCard,
     CvCard,
     UserInfoCard,
-    Overlay,
+    WelcomeCard,
+    Overlay
 }
