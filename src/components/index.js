@@ -6,7 +6,6 @@ import Footer from "./Footer";
 import DarkModeButton from "./DarkModeButton";
 import Game from "./Game";
 import ProjectCard from "./ProjectCard";
-import WeatherCard from "./WeatherCard";
 import CvCard from "./CvCard";
 import UserInfoCard from "./UserInfoCard";
 import WelcomeCard from "./WelcomeCard";
@@ -20,9 +19,8 @@ export {
     DarkModeButton,
     Game,
     ProjectCard,
-    WeatherCard,
     CvCard,
     UserInfoCard,
     WelcomeCard,
-    Overlay
+    Overlay,
 }

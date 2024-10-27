@@ -12,7 +12,7 @@
 body {
   font-family: "Work Sans", sans-serif;
   overflow: auto;
-  @apply bg-[#E0E4E4] dark:bg-[#121212];
+  @apply bg-white dark:bg-[#121212];
 }
 
 body:has(.card[data-color="blue"]:hover) {

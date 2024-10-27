@@ -50,7 +50,7 @@ const UserInfoCard = () => {
 
     if (loading) {
         return (
-            <div className="flex flex-col items-center h-44 w-72 rounded-3xl border-4 border-neutral-500 dark:border-gray-300 overflow-hidden shadow-md">
+            <div className="flex flex-col items-center h-full w-full rounded-3xl border-4 border-neutral-500 dark:border-gray-300 overflow-hidden shadow-md">
                 <aside className="bg-gray-800 text-white p-4 rounded-lg w-full h-full font-mono">
                     <div className="flex justify-center items-center h-full">
                         <p className="typing text-xs">Loading...</p>
@@ -61,13 +61,13 @@ const UserInfoCard = () => {
     }
 
     if (error) {
-        return <div className="flex justify-center text-white items-center h-44 w-72">Error: {error}</div>;
+        return <div className="flex justify-center text-white items-center h-full w-full">Error: {error}</div>;
     }
 
     const os = getOS();
 
     return (
-        <div className="flex flex-col items-center h-44 w-72 rounded-3xl border-4 border-neutral-500 dark:border-gray-300 overflow-hidden shadow-md">
+        <div className="flex flex-col items-center h-full w-full max-w-96 rounded-3xl border-4 border-gray-400 dark:border-gray-300 overflow-hidden shadow-md">
             <aside className="bg-gray-800 text-white p-4 rounded-lg w-full h-full font-mono">
                 <div className="flex justify-between items-center">
                     <div className="flex space-x-2 text-red-500">
