@@ -12,7 +12,7 @@ const ProjectCard = ({ project }) => {
                     {/* Outer div applying project-specific shadow and theme */}
                     <div className={`${project.shadow} rounded-xl ${project.theme} w-full h-full flex justify-center items-center transition-transform duration-300 hover:scale-110`}>
                         {/* Inner div containing the project icon */}
-                        <div className="btn-front rounded-xl flex justify-center items-center w-full h-full">
+                        <div className="rounded-xl flex justify-center items-center w-full h-full">
                             <img
                                 src={project.iconUrl}
                                 alt={project.name}

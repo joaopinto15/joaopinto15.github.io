@@ -1,4 +1,4 @@
-import { FaGithubSquare, FaLinkedin, FaNodeJs, FaReact, FaAws } from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin, FaNodeJs, FaReact } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
 import { SiCredly, SiDeno, SiJavascript, SiOracle } from "react-icons/si";
 
@@ -18,8 +18,7 @@ export const skills = [
         url: "https://en.wikipedia.org/wiki/C_(programming_language)",
     },
     {
-        imageUrl: SiJavascript,
-        color: "#f7df1e",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
         name: "Javascript",
         type: "FrontEnd",
         url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
@@ -65,8 +64,7 @@ export const skills = [
         url: "https://nodejs.org/en/",
     },
     {
-        imageUrl: FaAws,
-        color: "#FF9900",
+        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
         name: "aws",
         type: "Tools",
         url: "https://aws.amazon.com/",
@@ -93,13 +91,6 @@ export const skills = [
         name: "Linux",
         type: "Tools",
         url: "https://www.linux.org/",
-    },
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
-        name: "Visual Studio",
-        type: "Tools",
-        url: "https://code.visualstudio.com/",
-
     },
 
 ];
