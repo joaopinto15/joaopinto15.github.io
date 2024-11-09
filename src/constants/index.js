@@ -1,8 +1,6 @@
-import { WiDaySunny, WiNightClear, WiCloud, WiCloudy, WiShowers, WiRain, WiThunderstorm, WiSnow, WiFog } from 'react-icons/wi';
-
-import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin, FaNodeJs, FaReact, FaAws } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
-import { SiCredly } from "react-icons/si";
+import { SiCredly, SiDeno, SiJavascript, SiOracle } from "react-icons/si";
 
 
 
@@ -20,19 +18,22 @@ export const skills = [
         url: "https://en.wikipedia.org/wiki/C_(programming_language)",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+        imageUrl: SiJavascript,
+        color: "#f7df1e",
         name: "Javascript",
         type: "FrontEnd",
         url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+        imageUrl: FaReact,
+        color: "#61DAFB",
         name: "React",
         type: "FrontEnd",
         url: "https://reactjs.org/",
     },
     {
         imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg",
+        color: "#DD0031",
         name: "Angular",
         type: "FrontEnd",
         url: "https://angular.io/",
@@ -44,7 +45,8 @@ export const skills = [
         url: "https://www.rust-lang.org/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg",
+        imageUrl: SiOracle,
+        color: "#F80000",
         name: "SQL",
         type: "BackEnd",
         url: "https://www.oracle.com/database/",
@@ -56,20 +58,21 @@ export const skills = [
         url: "https://www.python.org/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
+        imageUrl: FaNodeJs,
+        color: "#8CC84B",
         name: "Nodejs",
         type: "BackEnd",
         url: "https://nodejs.org/en/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+        imageUrl: FaAws,
+        color: "#FF9900",
         name: "aws",
         type: "Tools",
         url: "https://aws.amazon.com/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/denojs/denojs-original.svg",
-        name: "deno.js",
+        imageUrl: SiDeno,
         type: "BackEnd",
         url: "https://deno.com/",
     },
@@ -199,13 +202,6 @@ export const projects = [
     }
 ];
 
-export const overlay = [
-    {
-        title: "Welcome to my web portfolio!",
-        description: "Explore my work and don't miss the 3D animation section for an immersive experience. Enjoy!",
-    }
-];
-
 export const maps = {
     a_quiet_place: {
         scale: 3,
@@ -224,32 +220,3 @@ export const playerAnimations = {
     dance: "Dance",
 };
 
-export const weatherIcons = {
-    "01d": WiDaySunny,
-    "01n": WiNightClear,
-    "02d": WiCloud,
-    "02n": WiCloud,
-    "03d": WiCloudy,
-    "03n": WiCloudy,
-    "04d": WiCloudy,
-    "04n": WiCloudy,
-    "09d": WiShowers,
-    "09n": WiShowers,
-    "10d": WiRain,
-    "10n": WiRain,
-    "11d": WiThunderstorm,
-    "11n": WiThunderstorm,
-    "13d": WiSnow,
-    "13n": WiSnow,
-    "50d": WiFog,
-    "50n": WiFog,
-};
-
-export const overlayCards = [
-
-    {
-        image: "https://github.com/joaopinto15.png",
-        title: "Welcome to my web portfolio!",
-        description: "Explore my work and don't miss the 3D animation section for an immersive experience. Enjoy!",
-    },
-];

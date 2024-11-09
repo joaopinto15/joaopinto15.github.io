@@ -43,25 +43,42 @@ function RenderSkills({ type, shadow }) {
       <div className='h-10' />
       <h5 className="subhead-text-smaller text-black dark:text-white">{type}</h5>
       <div className='mt-16 flex flex-wrap gap-12'>
-        {skills.filter(skill => skill.type === type).map(skill => (
-          <Link
-            key={skill.name}
-            to={skill.url}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <div className='block-container w-20 h-20'>
-              <div className={`${shadow()} rounded-xl`} />
-              <div className='btn-front rounded-xl flex justify-center items-center'>
-                <img
-                  src={skill.imageUrl}
-                  alt={skill.name}
-                  className='w-1/2 h-1/2 object-contain'
-                />
+        {skills
+          .filter(skill => skill.type === type)
+          .map(skill => (
+            <Link
+              key={skill.name}
+              to={skill.url}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <div className='block-container w-20 h-20'>
+                <div className={`${shadow()} rounded-xl`} />
+                <div className='btn-front rounded-xl flex justify-center items-center'>
+                  {typeof skill.imageUrl === 'string' ? (
+                    <img
+                      src={skill.imageUrl}
+                      alt={skill.name}
+                      className='w-1/2 h-1/2 object-contain'
+                    />
+                  ) :
+                    skill.color ? (
+                      <skill.imageUrl
+                        className={`w-1/2 h-1/2 object-contain ${skill.background ? "bg" : ""} ${skill.color}`}
+                        style={{ color: skill.color }}
+                      />
+                    ) : (
+                      <skill.imageUrl
+                        className={'w-1/2 h-1/2 object-contain text-black dark:text-white'}
+                      />
+                    )
+                  }
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+
+            </Link>
+          ))}
+
       </div>
     </>
   )
