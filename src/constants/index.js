@@ -1,6 +1,6 @@
-import { FaGithubSquare, FaLinkedin, FaNodeJs, FaReact } from "react-icons/fa";
+import { FaGithubSquare, FaAws, FaLinkedin, FaNodeJs, FaReact } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
-import { SiCredly, SiDeno, SiJavascript, SiOracle } from "react-icons/si";
+import { SiCredly, SiDeno, SiOracle } from "react-icons/si";
 
 
 
@@ -64,7 +64,8 @@ export const skills = [
         url: "https://nodejs.org/en/",
     },
     {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+        imageUrl: FaAws,
+        color: "#FF9900",
         name: "aws",
         type: "Tools",
         url: "https://aws.amazon.com/",

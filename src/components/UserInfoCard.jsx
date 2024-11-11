@@ -51,7 +51,7 @@ const UserInfoCard = () => {
 
     if (loading) {
         return (
-            <div className="flex flex-col items-center h-full w-full max-w-96 rounded-3xl border-4 border-neutral-500 dark:border-gray-300 overflow-hidden shadow-md">
+            <div className="flex flex-col items-center h-40 w-full max-w-96 rounded-3xl border-4 border-neutral-500 dark:border-gray-300 overflow-hidden shadow-md">
                 <aside className="bg-gray-800 text-white p-4 rounded-lg w-full h-full font-mono">
                     <div className="flex justify-center items-center h-full">
                         <p className="typing text-xs">Loading...</p>
