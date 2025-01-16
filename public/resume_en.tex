@@ -1,0 +1,173 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage{graphicx} % Added for including images
+\usepackage[
+    pdftitle={João Pinto's Resume},
+    pdfauthor={João Pinto},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+\usepackage{charter}
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{0.3 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=1cm % Indentation added here
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{subhighlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=1.5cm, % Deeper indentation
+        label=$\vcenter{\hbox{\scriptsize$\circ$}}$ % Different bullet point style
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1}
+}{
+    \par\kern\topsep
+}
+
+\begin{document}
+
+% Header
+\begin{header}
+    % Create a horizontal container for the photo and name
+    \begin{minipage}[c]{0.2\textwidth} % Photo on the left
+        \includegraphics[width=\textwidth]{photo.jpg} % Replace 'photo.jpg' with your photo
+    \end{minipage}
+    \hfill
+\begin{minipage}[c]{0.75\textwidth} % Name on the right, vertically centered
+    % Name aligned to the middle of the photo
+    {\fontsize{25 pt}{25 pt}\selectfont \textbf{João Pinto}} \\[0.1cm] % Adjust spacing as needed
+    {\fontsize{12 pt}{12 pt}\selectfont Software Developer | \href{https://joaopinto15.github.io}{Website: joaopinto15.github.io}}
+\end{minipage}
+
+    
+    % Add contact details below the image and name
+    \vspace{0.8cm} % Space between the name and contact details
+    \centering
+    \normalsize
+    PT Citizen | 
+    \href{mailto:pintojad03@gmail.com}{pintojad03@gmail.com} | 
+    \href{tel:+351-915-069-719}{(+351) 915-069-719} | 
+    \href{https://linkedin.com/in/joaopinto15}{LinkedIn: joaopinto15} | 
+    \href{https://github.com/joaopinto15}{GitHub: joaopinto15}
+\end{header}
+
+
+
+% Education Section
+\section{EDUCATION}
+\textbf{\href{https://www.isep.ipp.pt}{Superior Institute of Engineering of Porto}} \hfill \textbf{Porto, Portugal} \\
+Degree in Informatics Engineering \hfill \textit{Expected Graduation: May 2025} \\
+\begin{subhighlights}
+    \item \textbf{Concentrations:} Software Projects \& Agile Methodology
+    \item \textbf{Grade:} 16.00/20.00
+    \item \textbf{Relevant Coursework:} Data Structures \& Algorithms, Design Patterns, Databases, Web Frameworks, 
+    Computer Networks, Operating Systems, Machine Learning, Artificial Intelligence, Object-Oriented Programming, SCRUM
+\end{subhighlights}
+
+% Experience Section
+\section{EXPERIENCE}
+\begin{highlights}
+    \item Currently seeking professional experience.
+\end{highlights}
+% Projects Section
+\section{PROJECTS}
+\textbf{Hair Drop} \hfill \textbf{Sofia, Bulgaria} \\
+\textit{Team Lead} \hfill Sept 2024 \\
+\begin{highlights}
+    \item Developed a full-stack application using Rust (back-end) and React (front-end) with secure code concepts.
+    \item Integrated secure code principles: SQL injection prevention, memory leak handling, and API protection.
+\end{highlights}
+
+\textbf{\href{https://purenimble.github.io/projects}{ISEP’s Projects}} \hfill Porto, Portugal \\
+\textit{Team Lead/Member} \hfill Nov 2022 – Jan 2025 \\
+\begin{highlights}
+    \item Led a team using Agile methodologies, managing project sprints and team tasks.
+    \item Developed a full-stack application using Java and C.
+\end{highlights}
+
+% Activities and Leadership Section
+\section{ACTIVITIES AND LEADERSHIP}
+\textbf{Technical University of Sofia} \hfill \textbf{Sofia, Bulgaria} \\
+\textit{Erasmus+ Student} \hfill Sept 2024 – Jan 2025 \\
+\begin{highlights}
+    \item 1 semester in an English-taught university program, gaining valuable international academic exposure.
+\end{highlights}
+
+\textbf{Federated Sport – Basketball} \hfill \textbf{Porto, Portugal} \\
+\textit{Basketball Player} \hfill 2006 – 2022 \\
+\begin{highlights}
+    \item Gained teamwork, communication, and discipline through competitive basketball.
+    \item Learned punctuality, respect for rules, and team collaboration.
+\end{highlights}
+
+% Skills Section
+\section{SKILLS}
+\textbf{Programming:} Java, C, Python, JavaScript, SQL, Node.js, React.js, MATLAB, Rust \\
+\textbf{Tools:} Git, Agile, SCRUM, Docker, SSH
+
+\end{document}
