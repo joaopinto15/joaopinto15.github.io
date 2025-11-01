@@ -11,10 +11,19 @@ const App = () => {
   const getDarkMode = () => darkMode;
   //Set dark mode on page load
   useEffect(() => {
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    const appleStatusBarMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+    const lightColor = "#ffffff";
+    const darkColor = "#121212";
+
     if (darkMode) {
       document.documentElement.classList.add('dark');
+      if (themeColorMeta) themeColorMeta.setAttribute("content", darkColor);
+      if (appleStatusBarMeta) appleStatusBarMeta.setAttribute("content", "black-translucent");
     } else {
       document.documentElement.classList.remove('dark');
+      if (themeColorMeta) themeColorMeta.setAttribute("content", lightColor);
+      if (appleStatusBarMeta) appleStatusBarMeta.setAttribute("content", "default");
     }
   }, [darkMode]);
 
