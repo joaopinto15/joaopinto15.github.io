@@ -9,9 +9,10 @@ const Projects = ({ getDarkMode }) => {
     <section className='max-container'>
       <h1 className='head-text text-black dark:text-white'>
         My{" "}
-        <span className='blue-gradient_text drop-shadow font-semibold'>
-          Projects
-        </span>
+        <span className='blue-gradient_text font-semibold drop-shadow'>
+          {" "}
+          Project
+        </span>{" "}
       </h1>
 
       <p className='text-slate-500 dark:text-slate-100 mt-2 leading-relaxed'>

@@ -9,7 +9,7 @@ const Footer = () => {
 
       <div className='footer-container no-select text-black dark:text-white'>
         <p>
-          © 2024 <strong>João Pinto</strong>
+          © 2025 <strong>João Pinto</strong>
         </p>
 
         <div className='flex gap-3 justify-center items-center'>

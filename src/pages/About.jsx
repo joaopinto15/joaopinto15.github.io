@@ -37,56 +37,54 @@ function renderPoint(point) {
   return segments;
 }
 
-function RenderSkills({ type, shadow }) {
+const proficiencyColors = {
+  FrontEnd: "from-blue-400 to-blue-600",
+  BackEnd: "from-green-400 to-green-600",
+  Network: "from-amber-400 to-amber-600",
+  "Machine Learning": "from-purple-400 to-purple-600",
+};
+
+function RenderSkills({ type }) {
+  const skillsByType = skills
+    .filter((skill) => skill.type === type)
+    .sort((a, b) => (b.proficiency || 0) - (a.proficiency || 0));
+
   return (
-    <>
-      <div className='h-10' />
+    <div className='flex flex-col w-full'>
       <h5 className="subhead-text-smaller text-black dark:text-white">{type}</h5>
-      <div className='mt-16 flex flex-wrap gap-12'>
-        {skills
-          .filter(skill => skill.type === type)
-          .map(skill => (
+      <div className='mt-4 flex flex-col gap-4'>
+        {skillsByType.map((skill) => {
+          const level = skill.proficiency ?? 0;
+          const gradient = proficiencyColors[type] || "from-slate-400 to-slate-600";
+
+          return (
             <Link
               key={skill.name}
               to={skill.url}
               target='_blank'
               rel='noopener noreferrer'
+              className='group block w-full'
             >
-              <div className='block-container w-20 h-20'>
-                <div className={`${shadow()} rounded-xl`} />
-                <div className='btn-front rounded-xl flex justify-center items-center'>
-                  {typeof skill.imageUrl === 'string' ? (
-                    <img
-                      src={skill.imageUrl}
-                      alt={skill.name}
-                      className='w-1/2 h-1/2 object-contain'
-                    />
-                  ) :
-                    skill.color ? (
-                      <skill.imageUrl
-                        className={`w-1/2 h-1/2 object-contain ${skill.background ? "bg" : ""} ${skill.color}`}
-                        style={{ color: skill.color }}
-                      />
-                    ) : (
-                      <skill.imageUrl
-                        className={'w-1/2 h-1/2 object-contain text-black dark:text-white'}
-                      />
-                    )
-                  }
-                </div>
+              <div className='flex justify-between text-sm font-semibold text-slate-600 dark:text-slate-300'>
+                <span>{skill.name}</span>
+                <span>{level}%</span>
               </div>
-
+              <div className='mt-2 h-3 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden'>
+                <div
+                  className={`h-full rounded-full bg-gradient-to-r ${gradient} transition-all duration-500 group-hover:opacity-90`}
+                  style={{ width: `${level}%` }}
+                  aria-hidden='true'
+                />
+              </div>
             </Link>
-          ))}
-
+          );
+        })}
       </div>
-    </>
+    </div>
   )
 }
 
 const About = ({ getDarkMode }) => {
-  const shadow = () => getDarkMode() ? "btn-dark" : "btn-back";
-
   return (
     <section className='max-container px-4 py-8'>
       <h1 className='head-text text-black dark:text-white mb-4'>
@@ -100,7 +98,7 @@ const About = ({ getDarkMode }) => {
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500 dark:text-slate-300'>
         <p>
-          Software Engineer based in Portugal, currently studying at <a href="https://www.isep.ipp.pt/" target="_blank" className="text-blue-400" rel="noopener noreferrer"> <strong>ISEP</strong></a>.
+          Software Engineering graduate from <a href="https://www.isep.ipp.pt/" target="_blank" className="text-blue-400" rel="noopener noreferrer"><strong>ISEP</strong></a>, bringing hands-on, collaborative experience across the full software lifecycle with a strong emphasis on backend engineering.
         </p>
       </div>
 
@@ -118,20 +116,20 @@ const About = ({ getDarkMode }) => {
       </div>
 
       <div className='py-10 flex flex-col'>
-        <h3 className='subhead-text text-black dark:text-white mb-4'>Used Technologies</h3>
-        <RenderSkills type="FrontEnd" shadow={shadow} />
-        <RenderSkills type="BackEnd" shadow={shadow} />
-        <RenderSkills type="Tools" shadow={shadow} />
+        <h3 className='subhead-text text-black dark:text-white mb-4'>Most used technologies</h3>
+        <div className='mt-6 grid gap-10 md:grid-cols-2 w-full max-w-5xl mx-auto'>
+          <RenderSkills type="BackEnd" />
+          <RenderSkills type="FrontEnd" />
+          <RenderSkills type="Machine Learning" />
+          <RenderSkills type="Network" />
+        </div>
       </div>
 
       <div className='py-16'>
-        <h3 className='subhead-text text-black dark:text-white mb-4'>Work Experience</h3>
+        <h3 className='subhead-text text-black dark:text-white mb-4'>Work/Academic Experience</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-500 dark:text-slate-300'>
           <p>
-            I am currently a university student, which has limited my ability to
-            gain extensive work experience so far. However, my academic journey has
-            equipped me with a strong foundation in programming and developed
-            my skills in all kind of topics related to frontend and backend.
+            As a recent university graduate, I possess a strong foundation in programming and comprehensive skills across both frontend and backend development. My academic background and project experience have fostered a deep interest in cybersecurity and the integration of artificial intelligence into modern systems. I am eager to apply my technical expertise and passion for innovation to develop secure, efficient, and intelligent digital solutions.
           </p>
         </div>
 

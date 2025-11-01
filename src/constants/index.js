@@ -1,116 +1,97 @@
-import { FaGithubSquare, FaAws, FaLinkedin, FaNodeJs, FaReact } from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
-import { SiCredly, SiDeno, SiOracle } from "react-icons/si";
+import { SiCredly } from "react-icons/si";
 
 
 
-export const skills = [
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
-        name: "Java",
-        type: "BackEnd",
-        url: "https://www.java.com/en/",
-    },
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
-        name: "C",
-        type: "BackEnd",
-        url: "https://en.wikipedia.org/wiki/C_(programming_language)",
-    },
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-        name: "Javascript",
-        type: "FrontEnd",
-        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    },
-    {
-        imageUrl: FaReact,
-        color: "#61DAFB",
-        name: "React",
-        type: "FrontEnd",
-        url: "https://reactjs.org/",
-    },
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg",
-        color: "#DD0031",
-        name: "Angular",
-        type: "FrontEnd",
-        url: "https://angular.io/",
-    },
-    {
-        imageUrl: "https://www.svgrepo.com/show/374056/rust.svg",
-        name: "Rust",
-        type: "BackEnd",
-        url: "https://www.rust-lang.org/",
-    },
-    {
-        imageUrl: SiOracle,
-        color: "#F80000",
-        name: "SQL",
-        type: "BackEnd",
-        url: "https://www.oracle.com/database/",
-    },
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-        name: "Python",
-        type: "BackEnd",
-        url: "https://www.python.org/",
-    },
-    {
-        imageUrl: FaNodeJs,
-        color: "#8CC84B",
-        name: "Nodejs",
-        type: "BackEnd",
-        url: "https://nodejs.org/en/",
-    },
-    {
-        imageUrl: FaAws,
-        color: "#FF9900",
-        name: "aws",
-        type: "Tools",
-        url: "https://aws.amazon.com/",
-    },
-    {
-        imageUrl: SiDeno,
-        type: "BackEnd",
-        url: "https://deno.com/",
-    },
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
-        name: "Postman",
-        type: "Tools",
-        url: "https://www.postman.com/",
-    },
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-        name: "Docker",
-        type: "Tools",
-        url: "https://www.docker.com/",
-    },
-    {
-        imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
-        name: "Linux",
-        type: "Tools",
-        url: "https://www.linux.org/",
-    },
+export const skills =
+    [
+        {
+            name: "Java",
+            type: "BackEnd",
+            url: "https://www.java.com/en/",
+            proficiency: 80,
+        },
+        {
+            name: "C",
+            type: "BackEnd",
+            url: "https://en.wikipedia.org/wiki/C_(programming_language)",
+            proficiency: 50,
+        },
+        {
+            name: "Rust",
+            type: "BackEnd",
+            url: "https://www.rust-lang.org/",
+            proficiency: 50,
+        },
+        {
+            name: "Nodejs",
+            type: "BackEnd",
+            url: "https://nodejs.org/en/",
+            proficiency: 70,
+        },
+        {
+            name: "SQL",
+            type: "BackEnd",
+            url: "https://www.oracle.com/database/",
+            proficiency: 80,
+        },
+        {
+            name: "Python",
+            type: "Machine Learning",
+            url: "https://www.python.org/",
+            proficiency: 50,
+        },
+        {
+            name: "Javascript",
+            type: "FrontEnd",
+            url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+            proficiency: 70,
+        },
+        {
+            name: "React",
+            type: "FrontEnd",
+            url: "https://reactjs.org/",
+            proficiency: 80,
+        },
+        {
+            color: "#DD0031",
+            name: "Typescript",
+            type: "FrontEnd",
+            url: "https://www.typescriptlang.org/",
+            proficiency: 50,
+        },
+        {
+            name: "Postman",
+            type: "Network",
+            url: "https://www.postman.com/",
+            proficiency: 85,
+        },
+        {
+            name: "Docker",
+            type: "Network",
+            url: "https://www.docker.com/",
+            proficiency: 90,
+        },
+        {
+            name: "Linux",
+            type: "Network",
+            url: "https://www.linux.org/",
+            proficiency: 90,
+        },
+        {
+            color: "#FF9900",
+            name: "AWS",
+            type: "Network",
+            url: "https://aws.amazon.com/",
+            proficiency: 50,
+        },
+    ];
 
-];
 /**
  *  colors to use : #fbc3bc, #accbe1, #b7e4c7, #a2d2ff
 */
 export const experiences = [
-    {
-        title: "Federated Sports",
-        company_name: "Basketball",
-        url: "https://www.fpb.pt/",
-        icon: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F631%2F451%2Foriginal%2Fbasketball-icon-symbol-sign-vector.jpg&f=1&nofb=1&ipt=38fa376762caec80703ddbbe952909148a8ab9942987ef50212036854e1baf98&ipo=images",
-        iconBg: "#b7e4c7",
-        date: "January 2006 - April 2020",
-        points: [
-            "I have several years of experience playing basketball, which has accustomed me to teamwork, respecting others, listening, and learning from each team member.",
-            "Also, I have learned to be disciplined, punctual, and to respect the rules.",
-        ],
-    },
     {
         title: "University of Porto",
         company_name: "ISEP",
@@ -139,6 +120,21 @@ export const experiences = [
 
         ],
     },
+    {
+        title: "Research Intern",
+        company_name: "GECAD - Research Group, Porto, Portugal",
+        url: "https://www.gecad.isep.ipp.pt/",
+        icon: "https://www2.gecad.isep.ipp.pt/GECAD/Pages/Institution/Brands/GECAD4.png",
+        iconBg: "#b7e4c7",
+        date: "February 2025 - June 2025",
+        points: [
+            "Integrated a Host-based Intrusion Detection System (HIDS) across Windows hosts to monitor process traffic behavior within the local network.",
+            "Developed an intelligent module leveraging machine learning techniques to analyze and classify SystemCalls from host systems.",
+            "Implemented SystemCall extraction in critical Windows processes to enhance communication with the central monitoring server.",
+            "Achieved 93% accuracy in detecting malicious system calls on Windows systems without compromising device functionality.",
+        ],
+    },
+
 ];
 
 export const socialLinks = [
@@ -180,10 +176,9 @@ export const projects = [
     {
         iconUrl: 'https://raw.githubusercontent.com/PureNimble/PureNimble.github.io/refs/heads/main/src/assets/HairDrop-Logo-DarkMode.svg',
         theme: 'btn-back-pink',
-        name: 'HairDrop (under development)',
+        name: 'HairDrop',
         description: 'This project is a service designed to seamlessly connect users with hair salons, barbershops, and independent hairstylists, offering a modern, on-demand solution for hair care.',
         link: 'https://github.com/PureNimble/hairdrop',
-        website: 'https://hairdrop.me',
     },
     {
         iconUrl: 'https://raw.githubusercontent.com/PureNimble/PureNimble.github.io/refs/heads/main/src/assets/Jobs4u-Logo-LightMode.svg',
@@ -211,4 +206,3 @@ export const playerAnimations = {
     pointingUp: "Pointing Up",
     dance: "Dance",
 };
-
