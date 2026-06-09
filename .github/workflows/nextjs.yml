@@ -53,6 +53,12 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Check static export
+        run: |
+          ls -la
+          ls -la out
+          test -f out/index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
