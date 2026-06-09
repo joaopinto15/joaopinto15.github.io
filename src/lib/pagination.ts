@@ -1,5 +1,5 @@
 /**
- * Pagination utilities for blog posts and other content collections
+ * Pagination utilities for notes and other content collections
  */
 
 export interface PaginationOptions {
@@ -82,4 +82,3 @@ export function normalizePage(page: number | string | undefined, maxPage: number
   }
   return 1;
 }
-
