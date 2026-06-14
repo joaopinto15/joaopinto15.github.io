@@ -38,9 +38,7 @@ export const DATA = {
     { name: "Argo CD", icon: Argocd },
     { name: "Redis", icon: Redis },
   ],
-  navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-  ],
+  navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
     email: "pintojad03@gmail.com",
     social: {
@@ -148,8 +146,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+      video: "/wazuh.mp4",
     },
     {
       title: "Kubernetes HomeServer",
@@ -174,7 +171,25 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      video: "/k8s.mp4",
+    },
+    {
+      title: "Neovim Config",
+      href: "https://github.com/joaopinto15/nvim",
+      dates: "Jun 2026 - Present",
+      active: true,
+      description:
+        "A minimal Neovim configuration built around Neovim's native package manager, without relying on a distribution. It includes essentials for fuzzy finding, LSP support, Mason-managed tooling, and Treesitter-powered syntax highlighting.",
+      technologies: ["Lua", "Fuzzy Finder", "LSP", "Mason", "Treesitter"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/joaopinto15/nvim",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/nvim.png",
+      video: "",
     },
   ],
 } as const;
