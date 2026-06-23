@@ -101,7 +101,7 @@ export const DATA = {
   education: [
     {
       school: "University of Porto",
-      href: "https://www.up.pt/feup/pt/",
+      href: "https://www.up.pt/fcup/en/",
       degree: "Master's Degree in CyberSecurity",
       logoUrl: "/fcup.svg",
       start: "2026",
