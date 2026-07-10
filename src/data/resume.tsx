@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon } from "lucide-react";
+import { HomeIcon, FileUser } from "lucide-react";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { Typescript } from "@/components/ui/svgs/typescript";
 import { Nodejs } from "@/components/ui/svgs/nodejs";
@@ -38,7 +38,10 @@ export const DATA = {
     { name: "Argo CD", icon: Argocd },
     { name: "Redis", icon: Redis },
   ],
-  navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
+  navbar: [
+    { href: "/", icon: HomeIcon, label: "Home", newTab: false },
+    { href: "/CV.pdf", icon: FileUser, label: "CV", newTab: true },
+  ],
   contact: {
     email: "pintojad03@gmail.com",
     social: {
